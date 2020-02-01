@@ -34,14 +34,15 @@ namespace GnomeVillage.Api
          });
 
 
-         services.AddMediatR(new[] { 
-            typeof(CommandHandlersReference).Assembly, 
+         services.AddMediatR(new[] {
+            typeof(CommandHandlersReference).Assembly,
             typeof(QueryHandlersReference).Assembly,
             typeof(CommandsReference).Assembly,
             typeof(QueriesReference).Assembly,
          });
          services.AddScoped<IQueryDispatcher, QueryDispatcher>();
          services.AddScoped<ICommandDispatcher, CommandDispatcher>();
+
       }
 
       public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

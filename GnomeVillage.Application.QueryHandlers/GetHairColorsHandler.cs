@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GnomeVillage.Application.QueryHandlers
 {
-   public class GetHairColorsHandler: QueryHandler<GetHairColorsQuery, IEnumerable<string>>
+   public class GetHairColorsHandler : QueryHandler<GetHairColorsQuery, IEnumerable<string>>
    {
       public GetHairColorsHandler(IQueryDispatcher bus, ILogger<GetHairColorsQuery> logger) : base(bus, logger)
       {

@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using GnomeVillage.Cqrs.Contracts;
+﻿using GnomeVillage.Cqrs.Contracts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
@@ -10,14 +9,11 @@ namespace GnomeVillage.Api.Controllers
    {
       protected readonly ILogger<T> Logger;
       protected readonly ICommandDispatcher CommandDispatcher;
-      protected readonly IMapper Mapper;
 
-
-      public CommandControllerBase(ILogger<T> logger, ICommandDispatcher commandDispatcher, IMapper mapper)
+      public CommandControllerBase(ILogger<T> logger, ICommandDispatcher commandDispatcher)
       {
          Logger = logger;
          CommandDispatcher = commandDispatcher;
-         Mapper = mapper;
       }
    }
 }
