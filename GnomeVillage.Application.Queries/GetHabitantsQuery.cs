@@ -1,6 +1,7 @@
-﻿using GnomeVillage.Cqrs.Implementation;
+﻿using GnomeVillage.Application.Queries.dto;
+using GnomeVillage.Cqrs.Implementation;
 
-namespace GnomeVillage.Application.ReadStack.GetHabitants
+namespace GnomeVillage.Application.Queries
 {
    public class GetHabitantsQuery: PagedQuery<Habitant>
    {
