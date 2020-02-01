@@ -3,9 +3,9 @@ using GnomeVillage.Cqrs.Implementation;
 
 namespace GnomeVillage.Application.Queries
 {
-   public class GetHabitantsQuery: PagedQuery<Habitant>
+   public class GetHabitantsQuery : PagedQuery<Habitant>
    {
-      public GetHabitantsQuery(int limit, int offset): base(limit, offset)
+      public GetHabitantsQuery(int limit, int offset) : base(limit, offset)
       {
       }
    }

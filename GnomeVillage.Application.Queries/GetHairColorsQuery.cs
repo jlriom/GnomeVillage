@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GnomeVillage.Application.Queries
 {
-   public class GetHairColorsQuery: IQuery<IEnumerable<string>>
+   public class GetHairColorsQuery : IQuery<IEnumerable<string>>
    {
    }
 }

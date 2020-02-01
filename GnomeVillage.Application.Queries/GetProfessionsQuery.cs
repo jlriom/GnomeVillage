@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace GnomeVillage.Application.Queries
 {
-   public class GetProfessionsQuery: IQuery<IEnumerable<string>>
+   public class GetProfessionsQuery : IQuery<IEnumerable<string>>
    {
    }
 }
