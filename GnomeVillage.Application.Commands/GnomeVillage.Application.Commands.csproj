@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="2.3.0" />
+    <PackageReference Include="MediatR" Version="8.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GnomeVillage.Cqrs.Contracts\GnomeVillage.Cqrs.Contracts.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Cqrs.Implementation\GnomeVillage.Cqrs.Implementation.csproj" />
+  </ItemGroup>
+
+</Project>
