@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -24,8 +24,10 @@
   <ItemGroup>
     <ProjectReference Include="..\GnomeVillage.Application.CommandHandlers\GnomeVillage.Application.CommandHandlers.csproj" />
     <ProjectReference Include="..\GnomeVillage.Application.Commands\GnomeVillage.Application.Commands.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Application.Common\GnomeVillage.Application.Common.csproj" />
     <ProjectReference Include="..\GnomeVillage.Application.Queries\GnomeVillage.Application.Queries.csproj" />
     <ProjectReference Include="..\GnomeVillage.Application.QueryHandlers\GnomeVillage.Application.QueryHandlers.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Domain\GnomeVillage.Domain.csproj" />
   </ItemGroup>
 
 

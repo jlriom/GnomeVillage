@@ -22,6 +22,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status200OK)]
       [ProducesResponseType(StatusCodes.Status400BadRequest)]
       [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+      [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
       public async Task<ActionResult<HabitantViewModel>> GetHabitant(string habitantId, [FromServices] IQueryDispatcher queryDispatcher)
          => Ok(await queryDispatcher.Dispatch(new GetHabitantQuery(habitantId)));

@@ -1,3 +1,4 @@
+using GnomeVillage.Api.Core;
 using GnomeVillage.Application.CommandHandlers;
 using GnomeVillage.Application.Commands;
 using GnomeVillage.Application.Queries;
@@ -6,10 +7,8 @@ using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 
 
@@ -45,8 +44,9 @@ namespace GnomeVillage.Api
          });
       }
 
-      public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+      public void Configure(IApplicationBuilder app)
       {
+
          app.UseSwagger();
 
          app.UseSwaggerUI(c =>
@@ -55,11 +55,7 @@ namespace GnomeVillage.Api
             c.RoutePrefix = string.Empty;
          });
 
-
-         if (env.IsDevelopment())
-         {
-            app.UseDeveloperExceptionPage();
-         }
+         app.ConfigureExceptionHandler();
 
          app.UseHttpsRedirection();
 
