@@ -1,4 +1,4 @@
-﻿namespace GnomeVillage.Domain.Contracts
+﻿namespace GnomeVillage.Domain
 {
    public interface IHabitantRuleCheckerService
    {

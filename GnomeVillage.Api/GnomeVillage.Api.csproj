@@ -27,7 +27,11 @@
     <ProjectReference Include="..\GnomeVillage.Application.Common\GnomeVillage.Application.Common.csproj" />
     <ProjectReference Include="..\GnomeVillage.Application.Queries\GnomeVillage.Application.Queries.csproj" />
     <ProjectReference Include="..\GnomeVillage.Application.QueryHandlers\GnomeVillage.Application.QueryHandlers.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Data\GnomeVillage.Data.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Domain.Implementation\GnomeVillage.Domain.Implementation.csproj" />
     <ProjectReference Include="..\GnomeVillage.Domain\GnomeVillage.Domain.csproj" />
+    <ProjectReference Include="..\GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj" />
+    <ProjectReference Include="..\GnomeVillage.ReadModel.Implementation\GnomeVillage.ReadModel.Implementation.csproj" />
   </ItemGroup>
 
 
