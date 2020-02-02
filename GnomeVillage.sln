@@ -27,9 +27,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Application.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Domain.Core", "GnomeVillage.Domain.Core\GnomeVillage.Domain.Core.csproj", "{91462C65-3207-493D-94F7-F4092F9F7C08}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GnomeVillage.Database.SqlServer", "GnomeVillage.Database.SqlServer\GnomeVillage.Database.SqlServer.sqlproj", "{3996BB93-0ADD-4E3C-A015-3BDF85548833}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Data.ConsoleTool", "GnomeVillage.Data.ConsoleTool\GnomeVillage.Data.ConsoleTool.csproj", "{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Domain.Implementation", "GnomeVillage.Domain.Implementation\GnomeVillage.Domain.Implementation.csproj", "{004739C4-3EDF-4465-AB8E-1BF178D5F848}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GnomeVillage.Data.SqlServer", "GnomeVillage.Data.SqlServer\GnomeVillage.Data.SqlServer.sqlproj", "{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.ReadModel.Contracts", "GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj", "{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.ReadModel.Implementation", "GnomeVillage.ReadModel.Implementation\GnomeVillage.ReadModel.Implementation.csproj", "{F2D31144-4AFA-4191-A97A-C5C0FF004D62}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,16 +91,28 @@ Global
 		{91462C65-3207-493D-94F7-F4092F9F7C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91462C65-3207-493D-94F7-F4092F9F7C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91462C65-3207-493D-94F7-F4092F9F7C08}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3996BB93-0ADD-4E3C-A015-3BDF85548833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3996BB93-0ADD-4E3C-A015-3BDF85548833}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3996BB93-0ADD-4E3C-A015-3BDF85548833}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{3996BB93-0ADD-4E3C-A015-3BDF85548833}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3996BB93-0ADD-4E3C-A015-3BDF85548833}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3996BB93-0ADD-4E3C-A015-3BDF85548833}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47}.Release|Any CPU.Build.0 = Release|Any CPU
+		{004739C4-3EDF-4465-AB8E-1BF178D5F848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{004739C4-3EDF-4465-AB8E-1BF178D5F848}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{004739C4-3EDF-4465-AB8E-1BF178D5F848}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{004739C4-3EDF-4465-AB8E-1BF178D5F848}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2D31144-4AFA-4191-A97A-C5C0FF004D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2D31144-4AFA-4191-A97A-C5C0FF004D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2D31144-4AFA-4191-A97A-C5C0FF004D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2D31144-4AFA-4191-A97A-C5C0FF004D62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

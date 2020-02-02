@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\GnomeVillage.Data\GnomeVillage.Data.csproj" />
+    <ProjectReference Include="..\GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

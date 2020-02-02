@@ -21,7 +21,7 @@ namespace GnomeVillage.Application.Common.Exceptions
       {
       }
 
-      protected AppException(SerializationInfo info, StreamingContext context) : base(typeof(AppException).Name, StatusValue, info, context)
+      protected AppException(SerializationInfo info, StreamingContext context) : base(info, context)
       {
       }
    }

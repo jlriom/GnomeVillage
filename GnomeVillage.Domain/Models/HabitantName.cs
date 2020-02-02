@@ -2,8 +2,8 @@
 
 namespace GnomeVillage.Domain
 {
-   public class HabitantName: ValueObject<HabitantName>
-   { 
+   public class HabitantName : ValueObject<HabitantName>
+   {
       public string Value { get; }
       internal HabitantName(string value) => Value = value;
 

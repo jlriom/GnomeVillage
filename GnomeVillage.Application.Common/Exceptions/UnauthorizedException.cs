@@ -21,7 +21,7 @@ namespace GnomeVillage.Application.Common.Exceptions
       {
       }
 
-      protected UnauthorizedException(SerializationInfo info, StreamingContext context) : base(typeof(UnauthorizedException).Name, StatusValue, info, context)
+      protected UnauthorizedException(SerializationInfo info, StreamingContext context) : base(info, context)
       {
       }
    }

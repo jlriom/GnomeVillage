@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace GnomeVillage.Domain
 {
-   public class Habitant: Entity<HabitantId>
+   public class Habitant : Entity<HabitantId>
    {
       public HabitantName Name { get; set; }
       public Uri Thumbnail { get; set; }
@@ -17,7 +17,7 @@ namespace GnomeVillage.Domain
 
       protected override void EnsureValidState()
       {
-         if (Name == null || (Name!= null && string.IsNullOrEmpty(Name.Value)))
+         if (Name == null || (Name != null && string.IsNullOrEmpty(Name.Value)))
          {
             BrokenRules.Add(new BrokenRule("Name has to be defined"));
          }

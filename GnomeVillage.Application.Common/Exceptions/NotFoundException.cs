@@ -20,7 +20,7 @@ namespace GnomeVillage.Application.Common.Exceptions
       {
       }
 
-      protected NotFoundException(SerializationInfo info, StreamingContext context) : base(typeof(NotFoundException).Name, StatusValue, info, context)
+      protected NotFoundException(SerializationInfo info, StreamingContext context) : base(info, context)
       {
       }
    }

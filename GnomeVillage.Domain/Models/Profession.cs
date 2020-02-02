@@ -4,6 +4,6 @@ namespace GnomeVillage.Domain
 {
    public class Profession : ValueObject<Profession>
    {
-      public ProfessionId Id { get; } 
+      public ProfessionId Id { get; }
    }
 }
