@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CSharpFunctionalExtensions" Version="2.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\GnomeVillage.Data\GnomeVillage.Data.csproj" />
     <ProjectReference Include="..\GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj" />
   </ItemGroup>
