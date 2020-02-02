@@ -1,6 +1,6 @@
 ﻿namespace GnomeVillage.Application.Queries.Dto
 {
-   public class Habitant
+   public class HabitantViewModel
    {
       public int Id { get; set; }
       public string Name { get; set; }

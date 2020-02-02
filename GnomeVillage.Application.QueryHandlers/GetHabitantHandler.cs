@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace GnomeVillage.Application.QueryHandlers
 {
-   public class GetHabitantHandler : QueryHandler<GetHabitantQuery, Habitant>
+   public class GetHabitantHandler : QueryHandler<GetHabitantQuery, HabitantViewModel>
    {
       public GetHabitantHandler(IQueryDispatcher bus, ILogger<GetHabitantQuery> logger) : base(bus, logger)
       {
       }
 
-      protected override Task<Habitant> HandleEx(GetHabitantQuery query, CancellationToken cancellationToken = default)
+      protected override Task<HabitantViewModel> HandleEx(GetHabitantQuery query, CancellationToken cancellationToken = default)
       {
          throw new NotImplementedException();
       }

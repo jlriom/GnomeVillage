@@ -1,6 +1,9 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using GnomeVillage.Application.Commands;
+using GnomeVillage.Application.Commands.Dto;
 using GnomeVillage.Application.Queries;
+using GnomeVillage.Application.Queries.Dto;
 using GnomeVillage.Cqrs.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +19,11 @@ namespace GnomeVillage.Api.Controllers
 
       [HttpGet]
       [Route("{habitantId}")]
-      public async Task<ActionResult> GetHabitant(string habitantId, IQueryDispatcher queryDispatcher)
+      [ProducesResponseType(StatusCodes.Status200OK)]
+      [ProducesResponseType(StatusCodes.Status400BadRequest)]
+      [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+      [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+      public async Task<ActionResult<HabitantViewModel>> GetHabitant(string habitantId, [FromServices] IQueryDispatcher queryDispatcher)
          => Ok(await queryDispatcher.Dispatch(new GetHabitantQuery(habitantId)));
 
       [HttpGet]
@@ -25,7 +32,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status400BadRequest)]
       [ProducesResponseType(StatusCodes.Status401Unauthorized)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-      public async Task<ActionResult> GetHabitantsQuery(int limit, int offset, IQueryDispatcher queryDispatcher)
+      public async Task<ActionResult<IEnumerable<HabitantViewModel>>> GetHabitants(int limit, int offset, [FromServices] IQueryDispatcher queryDispatcher)
          => Ok(await queryDispatcher.Dispatch(new GetHabitantsQuery(limit, offset)));
 
 
@@ -34,7 +41,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status400BadRequest)]
       [ProducesResponseType(StatusCodes.Status401Unauthorized)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-      public async Task<ActionResult> CreateHabitant([FromBody] Application.Commands.Dto.Habitant habitant, ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> CreateHabitant([FromBody] Habitant habitant, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new CreateHabitantCommand(habitant)));
 
       [HttpPut]
@@ -44,7 +51,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
       [Route("{habitantId}")]
-      public async Task<ActionResult> UpdateHabitant(string habitantId, [FromBody] Application.Commands.Dto.Habitant habitant, ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> UpdateHabitant(string habitantId, [FromBody] Habitant habitant, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new UpdateHabitantCommand(habitantId, habitant)));
 
       [HttpDelete]
@@ -54,7 +61,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status401Unauthorized)]
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-      public async Task<ActionResult> DeleteHabitant(string habitantId, ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> DeleteHabitant(string habitantId, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new DeleteHabitantCommand(habitantId)));
 
       [HttpPost]
@@ -64,7 +71,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
       [Route("{habitantId}/friend")]
-      public async Task<ActionResult> AddFriendToHabitant(string habitantId, [FromBody]string friendName, ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> AddFriendToHabitant(string habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new AddFriendToHabitantCommand(habitantId, friendName)));
 
       [HttpDelete]
@@ -74,7 +81,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
       [Route("{habitantId}/friend")]
-      public async Task<ActionResult> DeleteFriendFromHabitant(string habitantId, [FromBody]string friendName, ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> DeleteFriendFromHabitant(string habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new DeleteFriendFromHabitantCommand(habitantId, friendName)));
 
    }
