@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace GnomeVillage.Domain.Core
+﻿namespace GnomeVillage.Domain.Core
 {
    public class IdBase<T> 
    {

@@ -8,18 +8,16 @@ namespace GnomeVillage.Domain.Core
 {
    public abstract class ValueObject<T> where T : ValueObject<T>
    {
-      private static readonly Member[] Members = GetMembers().ToArray();
+      private readonly Member[] Members = GetMembers().ToArray();
 
-      public override bool Equals(object other)
+      public override bool Equals(object obj)
       {
-         if (other is null) return false;
-         if (ReferenceEquals(this, other)) return true;
+         if (obj is null) return false;
+         if (ReferenceEquals(this, obj)) return true;
 
-         var members = Members;
-
-         return other.GetType() == typeof(T) && Members.All(m =>
+         return obj.GetType() == typeof(T) && Members.All(m =>
          {
-            var otherValue = m.GetValue(other);
+            var otherValue = m.GetValue(obj);
             var thisValue = m.GetValue(this);
             return m.IsNonStringEnumerable
                 ? GetEnumerableValues(otherValue).SequenceEqual(GetEnumerableValues(thisValue))
@@ -33,9 +31,6 @@ namespace GnomeVillage.Domain.Core
                   ? CombineHashCodes(GetEnumerableValues(m.GetValue(this)))
                   : m.GetValue(this)));
 
-      public static bool operator ==(ValueObject<T> left, ValueObject<T> right) => Equals(left, right);
-
-      public static bool operator !=(ValueObject<T> left, ValueObject<T> right) => !Equals(left, right);
 
       public override string ToString()
       {
@@ -51,15 +46,30 @@ namespace GnomeVillage.Domain.Core
          var values = Members.Select(m =>
          {
             var value = m.GetValue(this);
-            return m.IsNonStringEnumerable
-                ? $"{m.Name}:{string.Join("|", GetEnumerableValues(value))}"
-                : m.Type != typeof(string)
-                    ? $"{m.Name}:{value}"
-                    : value == null
-                        ? $"{m.Name}:null"
-                        : $"{m.Name}:\"{value}\"";
+            return GetString(m, value);
          });
          return $"{typeof(T).Name}[{string.Join("|", values)}]";
+      }
+
+      private static string GetString(Member m, object value)
+      {
+         if (m.IsNonStringEnumerable)
+         {
+            return $"{m.Name}:{string.Join("|", GetEnumerableValues(value))}";
+         }
+         else
+         {
+            return m.Type != typeof(string)
+                 ? $"{m.Name}:{value}"
+                 : NotNullValueAsString(m, value);
+         }
+      }
+
+      private static string NotNullValueAsString(Member m, object value)
+      {
+         return value == null
+                     ? $"{m.Name}:null"
+                     : $"{m.Name}:\"{value}\"";
       }
 
       private static IEnumerable<Member> GetMembers()
