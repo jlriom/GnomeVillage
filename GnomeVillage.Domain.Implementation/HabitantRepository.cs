@@ -1,18 +1,20 @@
-﻿namespace GnomeVillage.Domain.Implementation
+﻿using System.Threading.Tasks;
+
+namespace GnomeVillage.Domain.Implementation
 {
    public class HabitantRepository : IHabitantRepository
    {
-      public void Delete(Habitant habitant)
+      public async Task DeleteAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }
 
-      public void Insert(Habitant habitant)
+      public async Task InsertAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }
 
-      public void Update(Habitant habitant)
+      public async Task UpdateAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }

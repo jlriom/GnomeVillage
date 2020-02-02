@@ -1,10 +1,11 @@
 ﻿using GnomeVillage.ReadModel.Contracts.Models;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace GnomeVillage.ReadModel.Contracts
 {
    public interface IHairColorReadonlyRepository
    {
-      IList<HairColor> GetAll();
+      Task<IList<HairColor>> GetAllAsync();
    }
 }

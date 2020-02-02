@@ -1,9 +1,11 @@
-﻿namespace GnomeVillage.Domain
+﻿using System.Threading.Tasks;
+
+namespace GnomeVillage.Domain
 {
    public interface IHabitantRepository
    {
-      void Insert(Habitant habitant);
-      void Update(Habitant habitant);
-      void Delete(Habitant habitant);
+      Task InsertAsync(Habitant habitant);
+      Task UpdateAsync(Habitant habitant);
+      Task DeleteAsync(Habitant habitant);
    }
 }

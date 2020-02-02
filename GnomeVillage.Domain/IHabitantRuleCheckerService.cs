@@ -1,9 +1,11 @@
-﻿namespace GnomeVillage.Domain
+﻿using System.Threading.Tasks;
+
+namespace GnomeVillage.Domain
 {
    public interface IHabitantRuleCheckerService
    {
-      void CheckForInsert(Habitant habitant);
-      void CheckForUpdate(Habitant habitant);
-      void CheckForDelete(Habitant habitant);
+      Task CheckForInsertAsync(Habitant habitant);
+      Task CheckForUpdateAsync(Habitant habitant);
+      Task CheckForDeleteAsync(Habitant habitant);
    }
 }

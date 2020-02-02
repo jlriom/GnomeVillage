@@ -1,10 +1,11 @@
 ﻿using CSharpFunctionalExtensions;
 using GnomeVillage.ReadModel.Contracts.Models;
+using System.Threading.Tasks;
 
 namespace GnomeVillage.ReadModel.Contracts
 {
    public interface IHabitantReadOnlyRepository
    {
-      Maybe<Habitant> GetSingle(int habitantId);
+      Task<Maybe<Habitant>> GetSingleAsync(int habitantId);
    }
 }

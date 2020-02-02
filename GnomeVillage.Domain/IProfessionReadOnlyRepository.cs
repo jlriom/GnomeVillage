@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
+using System.Threading.Tasks;
 
 namespace GnomeVillage.Domain
 {
    public interface IProfessionReadOnlyRepository
    {
-      Maybe<Profession> GetSingle(ProfessionId professionId);
+      Task<Maybe<Profession>> GetSingle(ProfessionId professionId);
    }
 }

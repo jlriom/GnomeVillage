@@ -2,7 +2,7 @@
 
 namespace GnomeVillage.ReadModel.Contracts.Models
 {
-    public partial class HabitantProfessions
+    public class HabitantProfessions
     {
         public Guid Id { get; set; }
         public int HabitantId { get; set; }

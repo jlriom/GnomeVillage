@@ -2,7 +2,7 @@
 
 namespace GnomeVillage.ReadModel.Contracts.Models
 {
-    public partial class HairColor
+    public class HairColor
     {
         public HairColor()
         {

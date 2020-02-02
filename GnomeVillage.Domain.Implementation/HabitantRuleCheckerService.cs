@@ -1,18 +1,20 @@
-﻿namespace GnomeVillage.Domain.Implementation
+﻿using System.Threading.Tasks;
+
+namespace GnomeVillage.Domain.Implementation
 {
    public class HabitantRuleCheckerService : IHabitantRuleCheckerService
    {
-      public void CheckForDelete(Habitant habitant)
+      public async Task CheckForDeleteAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }
 
-      public void CheckForInsert(Habitant habitant)
+      public async Task CheckForInsertAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }
 
-      public void CheckForUpdate(Habitant habitant)
+      public async Task CheckForUpdateAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }

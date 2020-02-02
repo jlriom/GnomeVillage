@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
+using System.Threading.Tasks;
 
 namespace GnomeVillage.Domain
 {
    public interface IHabitantReadOnlyRepository
    {
-      Maybe<Habitant> GetSingle(HabitantId habitantId);
+      Task<Maybe<Habitant>> GetSingleAsync(HabitantId habitantId);
    }
 }

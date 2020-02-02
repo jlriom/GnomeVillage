@@ -1,9 +1,10 @@
 ﻿using CSharpFunctionalExtensions;
+using System.Threading.Tasks;
 
 namespace GnomeVillage.Domain
 {
    public interface IHairColorReadonlyRepository
    {
-      Maybe<HairColor> GetSingle(HairColorId hairColorId);
+      Task<Maybe<HairColor>> GetSingleAsync(HairColorId hairColorId);
    }
 }

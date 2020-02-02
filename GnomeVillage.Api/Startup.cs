@@ -5,8 +5,10 @@ using GnomeVillage.Application.Queries;
 using GnomeVillage.Application.QueryHandlers;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
+using GnomeVillage.Data;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
@@ -32,7 +34,10 @@ namespace GnomeVillage.Api
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gnome Village API", Version = "v1" });
          });
 
-      
+         services.AddDbContext<GnomeVillageContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("GnomeVillageContext")));
+
+
          services.AddScoped<IUser, User>();
          services.AddScoped<IQueryDispatcher, QueryDispatcher>();
          services.AddScoped<ICommandDispatcher, CommandDispatcher>();
@@ -45,7 +50,7 @@ namespace GnomeVillage.Api
 
 
          services.AddScoped<ReadModel.Contracts.IHabitantReadOnlyRepository, ReadModel.Implementation.HabitantReadOnlyRepository> ();
-         services.AddScoped<ReadModel.Contracts.IHairColorReadonlyRepository, ReadModel.Implementation.HairColorReadonlyRepository> ();
+         services.AddScoped<ReadModel.Contracts.IHairColorReadonlyRepository, ReadModel.Implementation.HairColorReadonlyRepository>();
          services.AddScoped<ReadModel.Contracts.IProfessionReadOnlyRepository, ReadModel.Implementation.ProfessionReadOnlyRepository> ();
 
          services.AddScoped<Domain.IHabitantRuleCheckerService, Domain.Implementation.HabitantRuleCheckerService>();

@@ -2,7 +2,7 @@
 
 namespace GnomeVillage.ReadModel.Contracts.Models
 {
-    public partial class Profession
+    public class Profession
     {
         public Profession()
         {

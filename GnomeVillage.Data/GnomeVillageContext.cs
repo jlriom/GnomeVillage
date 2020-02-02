@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using GnomeVillage.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
-namespace GnomeVillage.Data.Models
+namespace GnomeVillage.Data
 {
    public partial class GnomeVillageContext : DbContext
     {
