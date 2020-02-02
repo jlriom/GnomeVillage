@@ -1,4 +1,4 @@
-﻿using GnomeVillage.Application.Commands.dto;
+﻿using GnomeVillage.Application.Commands.Dto;
 using GnomeVillage.Cqrs.Implementation;
 
 namespace GnomeVillage.Application.Commands

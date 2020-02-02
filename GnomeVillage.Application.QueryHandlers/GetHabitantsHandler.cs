@@ -1,5 +1,5 @@
 ﻿using GnomeVillage.Application.Queries;
-using GnomeVillage.Application.Queries.dto;
+using GnomeVillage.Application.Queries.Dto;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using Microsoft.Extensions.Logging;

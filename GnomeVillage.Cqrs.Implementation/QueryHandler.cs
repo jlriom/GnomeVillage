@@ -10,6 +10,7 @@ namespace GnomeVillage.Cqrs.Implementation
         where TQuery : IQuery<TResult>
         where TResult : class
    {
+      private readonly bool logHandler = false;
       protected readonly IBus Bus;
       protected readonly ILogger<TQuery> Logger;
 
@@ -21,6 +22,8 @@ namespace GnomeVillage.Cqrs.Implementation
 
       public Task<TResult> Handle(TQuery request, CancellationToken cancellationToken)
       {
+         if (!logHandler) return HandleEx(request, cancellationToken);
+
          try
          {
             using (Logger.BeginScope(typeof(TQuery)))

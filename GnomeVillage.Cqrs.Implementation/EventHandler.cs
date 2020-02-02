@@ -9,6 +9,7 @@ namespace GnomeVillage.Cqrs.Implementation
 {
    public abstract class EventHandler<TEvent> : INotificationHandler<TEvent> where TEvent : IEvent
    {
+      private readonly bool logHandler = false;
       protected readonly IBus Bus;
       protected readonly ILogger<IEvent> Logger;
 
@@ -20,6 +21,8 @@ namespace GnomeVillage.Cqrs.Implementation
 
       public Task Handle(TEvent notification, CancellationToken cancellationToken)
       {
+         if (!logHandler) return HandleEx(notification, cancellationToken);
+
          try
          {
             using (Logger.BeginScope(typeof(TEvent)))

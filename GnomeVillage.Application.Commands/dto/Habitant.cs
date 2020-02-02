@@ -1,8 +1,7 @@
-﻿namespace GnomeVillage.Application.Commands.dto
+﻿namespace GnomeVillage.Application.Commands.Dto
 {
    public class Habitant
    {
-      public int Id { get; set; }
       public string Name { get; set; }
       public string Thumbnail { get; set; }
       public int Age { get; }

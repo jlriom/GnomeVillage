@@ -9,6 +9,8 @@ namespace GnomeVillage.Cqrs.Implementation
 {
    public abstract class CommandHandler<TCommand> : ICommandHandler<TCommand> where TCommand : ICommand
    {
+      private readonly bool logHandler = false;
+
       protected readonly IBus Bus;
       protected readonly ILogger<TCommand> Logger;
 
@@ -20,6 +22,8 @@ namespace GnomeVillage.Cqrs.Implementation
 
       public Task<Result> Handle(TCommand request, CancellationToken cancellationToken)
       {
+         if (!logHandler) return HandleEx(request, cancellationToken);
+
          try
          {
             using (Logger.BeginScope(typeof(TCommand)))

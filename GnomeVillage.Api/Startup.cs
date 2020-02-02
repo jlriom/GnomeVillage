@@ -33,16 +33,16 @@ namespace GnomeVillage.Api
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Gnome Village API", Version = "v1" });
          });
 
-
+      
+         services.AddScoped<IUser, User>();
+         services.AddScoped<IQueryDispatcher, QueryDispatcher>();
+         services.AddScoped<ICommandDispatcher, CommandDispatcher>();
          services.AddMediatR(new[] {
             typeof(CommandHandlersReference).Assembly,
             typeof(QueryHandlersReference).Assembly,
             typeof(CommandsReference).Assembly,
             typeof(QueriesReference).Assembly,
          });
-         services.AddScoped<IQueryDispatcher, QueryDispatcher>();
-         services.AddScoped<ICommandDispatcher, CommandDispatcher>();
-
       }
 
       public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
