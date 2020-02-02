@@ -4,8 +4,8 @@ namespace GnomeVillage.Domain
 {
    public interface IHabitantRepository
    {
-      Task InsertAsync(Habitant habitant);
-      Task UpdateAsync(Habitant habitant);
-      Task DeleteAsync(Habitant habitant);
+      Task<Habitant> InsertAsync(Habitant habitant);
+      Task<Habitant> UpdateAsync(Habitant habitant);
+      Task<Habitant> DeleteAsync(Habitant habitant);
    }
 }

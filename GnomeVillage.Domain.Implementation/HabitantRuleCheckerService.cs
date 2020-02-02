@@ -4,17 +4,17 @@ namespace GnomeVillage.Domain.Implementation
 {
    public class HabitantRuleCheckerService : IHabitantRuleCheckerService
    {
-      public async Task CheckForDeleteAsync(Habitant habitant)
+      public async Task<Habitant> CheckForDeleteAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }
 
-      public async Task CheckForInsertAsync(Habitant habitant)
+      public async Task<Habitant> CheckForInsertAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }
 
-      public async Task CheckForUpdateAsync(Habitant habitant)
+      public async Task<Habitant> CheckForUpdateAsync(Habitant habitant)
       {
          throw new System.NotImplementedException();
       }

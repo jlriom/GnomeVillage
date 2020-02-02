@@ -4,8 +4,8 @@ namespace GnomeVillage.Domain
 {
    public interface IHabitantRuleCheckerService
    {
-      Task CheckForInsertAsync(Habitant habitant);
-      Task CheckForUpdateAsync(Habitant habitant);
-      Task CheckForDeleteAsync(Habitant habitant);
+      Task<Habitant> CheckForInsertAsync(Habitant habitant);
+      Task<Habitant> CheckForUpdateAsync(Habitant habitant);
+      Task<Habitant> CheckForDeleteAsync(Habitant habitant);
    }
 }
