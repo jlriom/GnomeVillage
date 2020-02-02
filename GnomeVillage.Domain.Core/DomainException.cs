@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
-namespace GnomeVillage.Domain
+namespace GnomeVillage.Domain.Core
 {
 
    [Serializable]
-   public class DomainException : ApplicationException
+   public sealed class DomainException : ApplicationException
    {
       private const int StatusValue = 400;
 
@@ -15,27 +16,33 @@ namespace GnomeVillage.Domain
       public string Detail { get; }
       public string Instance { get; }
 
-      public DomainException()
+      private DomainException():base()
       {
          Status = StatusValue;
          Type = typeof(DomainException).Name;
       }
 
-      public DomainException(string message) : base(message)
+      public DomainException(string message, IEnumerable<BrokenRule> brokenRules) : base(message)
+      {
+      
+         Status = StatusValue;
+         Type = typeof(DomainException).Name;
+         Title = message;
+
+         foreach (var brokenRule in brokenRules)
+         {
+            this.Data.Add(brokenRule, brokenRule.Description);
+         }
+      }
+
+      private DomainException(string message, Exception innerException) : base(message, innerException)
       {
          Status = StatusValue;
          Type = typeof(DomainException).Name;
          Title = message;
       }
 
-      public DomainException(string message, Exception innerException) : base(message, innerException)
-      {
-         Status = StatusValue;
-         Type = typeof(DomainException).Name;
-         Title = message;
-      }
-
-      protected DomainException(SerializationInfo info, StreamingContext context) : base(info, context)
+      private DomainException(SerializationInfo info, StreamingContext context) : base(info, context)
       {
          Status = StatusValue;
          Type = typeof(DomainException).Name;

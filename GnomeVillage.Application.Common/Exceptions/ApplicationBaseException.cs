@@ -4,7 +4,7 @@ using System.Runtime.Serialization;
 namespace GnomeVillage.Application.Common.Exceptions
 {
    [Serializable]
-   public abstract class ApplicationBaseException: ApplicationException
+   public class ApplicationBaseException : ApplicationException
    {
 
       public string Type { get; set; }
@@ -13,7 +13,7 @@ namespace GnomeVillage.Application.Common.Exceptions
       public string Detail { get; }
       public string Instance { get; }
 
-      protected ApplicationBaseException(string @type, int status)
+      protected ApplicationBaseException(string @type, int status) : base()
       {
          Type = @type;
          Status = status;
@@ -37,6 +37,8 @@ namespace GnomeVillage.Application.Common.Exceptions
 
       protected ApplicationBaseException(string @type, int status, SerializationInfo info, StreamingContext context) : base(info, context)
       {
+         Type = @type;
+         Status = status;
       }
    }
 }

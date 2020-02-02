@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Application.Qu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Application.Common", "GnomeVillage.Application.Common\GnomeVillage.Application.Common.csproj", "{3BE8D634-2781-4476-BBB3-F0F18936704D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Domain.Core", "GnomeVillage.Domain.Core\GnomeVillage.Domain.Core.csproj", "{91462C65-3207-493D-94F7-F4092F9F7C08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{3BE8D634-2781-4476-BBB3-F0F18936704D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BE8D634-2781-4476-BBB3-F0F18936704D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BE8D634-2781-4476-BBB3-F0F18936704D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91462C65-3207-493D-94F7-F4092F9F7C08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91462C65-3207-493D-94F7-F4092F9F7C08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91462C65-3207-493D-94F7-F4092F9F7C08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91462C65-3207-493D-94F7-F4092F9F7C08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
