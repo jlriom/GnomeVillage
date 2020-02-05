@@ -7,5 +7,6 @@ namespace GnomeVillage.ReadModel.Contracts
    public interface IHabitantReadOnlyRepository
    {
       Task<Maybe<Habitant>> GetSingleAsync(int habitantId);
+      Task<Paging<Habitant>> GetAsync(int limit, int offset);
    }
 }

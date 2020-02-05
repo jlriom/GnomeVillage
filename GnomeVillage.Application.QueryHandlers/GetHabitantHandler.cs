@@ -1,9 +1,11 @@
-﻿using GnomeVillage.Application.Queries;
+﻿using AutoMapper;
+using CSharpFunctionalExtensions;
+using GnomeVillage.Application.Queries;
 using GnomeVillage.Application.Queries.Dto;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
+using GnomeVillage.ReadModel.Contracts;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -11,13 +13,19 @@ namespace GnomeVillage.Application.QueryHandlers
 {
    public class GetHabitantHandler : QueryHandler<GetHabitantQuery, HabitantViewModel>
    {
-      public GetHabitantHandler(IQueryDispatcher bus, ILogger<GetHabitantQuery> logger) : base(bus, logger)
+      private readonly IHabitantReadOnlyRepository habitantReadOnlyRepository;
+
+      public GetHabitantHandler(IQueryDispatcher bus, IMapper mapper, ILogger<GetHabitantQuery> logger, IHabitantReadOnlyRepository habitantReadOnlyRepository) : base(bus, mapper, logger)
       {
+         this.habitantReadOnlyRepository = habitantReadOnlyRepository;
       }
 
-      protected override Task<HabitantViewModel> HandleEx(GetHabitantQuery query, CancellationToken cancellationToken = default)
+      protected override async Task<HabitantViewModel> HandleEx(GetHabitantQuery query, CancellationToken cancellationToken = default)
       {
-         throw new NotImplementedException();
+         var habitant = await habitantReadOnlyRepository.GetSingleAsync(query.Id);
+         if (habitant.HasValue)
+            return Mapper.Map<HabitantViewModel> (habitant.Value);
+         return null;
       }
    }
 }

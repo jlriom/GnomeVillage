@@ -1,4 +1,5 @@
-﻿using GnomeVillage.Cqrs.Contracts;
+﻿using AutoMapper;
+using GnomeVillage.Cqrs.Contracts;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Threading;
@@ -12,11 +13,13 @@ namespace GnomeVillage.Cqrs.Implementation
    {
       private readonly bool logHandler = false;
       protected readonly IBus Bus;
+      protected readonly IMapper Mapper;
       protected readonly ILogger<TQuery> Logger;
 
-      protected QueryHandler(IQueryDispatcher bus, ILogger<TQuery> logger)
+      protected QueryHandler(IQueryDispatcher bus, IMapper mapper, ILogger<TQuery> logger)
       {
          Bus = bus;
+         Mapper = mapper;
          Logger = logger;
       }
 

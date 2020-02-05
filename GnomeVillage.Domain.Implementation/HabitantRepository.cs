@@ -1,22 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using AutoMapper;
+using GnomeVillage.Data;
 
 namespace GnomeVillage.Domain.Implementation
 {
-   public class HabitantRepository : IHabitantRepository
+   public class HabitantRepository : Repository<Data.Models.Habitant, Habitant, HabitantId>, IHabitantRepository
    {
-      public async Task<Habitant> DeleteAsync(Habitant habitant)
+      public HabitantRepository(GnomeVillageContext context, IMapper mapper) : base(context, mapper)
       {
-         throw new System.NotImplementedException();
-      }
-
-      public async Task<Habitant> InsertAsync(Habitant habitant)
-      {
-         throw new System.NotImplementedException();
-      }
-
-      public async Task<Habitant> UpdateAsync(Habitant habitant)
-      {
-         throw new System.NotImplementedException();
       }
    }
 }

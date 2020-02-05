@@ -1,13 +1,12 @@
-﻿using CSharpFunctionalExtensions;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using GnomeVillage.Data;
 
 namespace GnomeVillage.Domain.Implementation
 {
-   public class HairColorReadonlyRepository : IHairColorReadonlyRepository
+   public class HairColorReadonlyRepository : Repository<Data.Models.HairColor, HairColor, HairColorId>, IHairColorReadonlyRepository
    {
-      public async Task<Maybe<HairColor>> GetSingleAsync(HairColorId hairColorId)
+      public HairColorReadonlyRepository(GnomeVillageContext context, IMapper mapper) : base(context, mapper)
       {
-         throw new System.NotImplementedException();
       }
    }
 }

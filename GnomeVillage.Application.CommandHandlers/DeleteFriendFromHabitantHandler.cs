@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using AutoMapper;
+using CSharpFunctionalExtensions;
 using GnomeVillage.Application.Commands;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
@@ -10,7 +11,7 @@ namespace GnomeVillage.Application.CommandHandlers
 {
    public class DeleteFriendFromHabitantHandler : CommandHandler<DeleteFriendFromHabitantCommand>
    {
-      public DeleteFriendFromHabitantHandler(ICommandDispatcher bus, ILogger<DeleteFriendFromHabitantCommand> logger) : base(bus, logger)
+      public DeleteFriendFromHabitantHandler(ICommandDispatcher bus, IMapper mapper, ILogger<DeleteFriendFromHabitantCommand> logger) : base(bus, mapper, logger)
       {
       }
 

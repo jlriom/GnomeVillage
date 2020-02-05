@@ -16,6 +16,7 @@
     <ProjectReference Include="..\GnomeVillage.Application.Common\GnomeVillage.Application.Common.csproj" />
     <ProjectReference Include="..\GnomeVillage.Application.Queries\GnomeVillage.Application.Queries.csproj" />
     <ProjectReference Include="..\GnomeVillage.Cqrs.Implementation\GnomeVillage.Cqrs.Implementation.csproj" />
+    <ProjectReference Include="..\GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj" />
   </ItemGroup>
 
 </Project>

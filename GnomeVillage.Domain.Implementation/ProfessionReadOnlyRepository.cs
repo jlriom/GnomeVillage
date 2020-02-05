@@ -1,13 +1,12 @@
-﻿using CSharpFunctionalExtensions;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using GnomeVillage.Data;
 
 namespace GnomeVillage.Domain.Implementation
 {
-   public class ProfessionReadOnlyRepository : IProfessionReadOnlyRepository
+   public class ProfessionReadonlyRepository : Repository<Data.Models.Profession, Profession, ProfessionId>, IProfessionReadonlyRepository
    {
-      public async Task<Maybe<Profession>> GetSingle(ProfessionId professionId)
+      public ProfessionReadonlyRepository(GnomeVillageContext context, IMapper mapper) : base(context, mapper)
       {
-         throw new System.NotImplementedException();
       }
    }
 }

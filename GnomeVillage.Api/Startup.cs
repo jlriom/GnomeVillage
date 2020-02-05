@@ -1,3 +1,4 @@
+using AutoMapper;
 using GnomeVillage.Api.Core;
 using GnomeVillage.Application.CommandHandlers;
 using GnomeVillage.Application.Commands;
@@ -57,7 +58,9 @@ namespace GnomeVillage.Api
          services.AddScoped<Domain.IHabitantReadOnlyRepository, Domain.Implementation.HabitantReadOnlyRepository>();
          services.AddScoped<Domain.IHabitantRepository, Domain.Implementation.HabitantRepository> ();
          services.AddScoped<Domain.IHairColorReadonlyRepository, Domain.Implementation.HairColorReadonlyRepository> ();
-         services.AddScoped<Domain.IProfessionReadOnlyRepository, Domain.Implementation.ProfessionReadOnlyRepository> ();
+         services.AddScoped<Domain.IProfessionReadonlyRepository, Domain.Implementation.ProfessionReadonlyRepository> ();
+
+         services.AddAutoMapper(typeof(Startup));
 
       }
 

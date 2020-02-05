@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using AutoMapper;
+using CSharpFunctionalExtensions;
 using GnomeVillage.Application.Commands;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
@@ -11,7 +12,7 @@ namespace GnomeVillage.Application.CommandHandlers
 {
    public class CreateHabitantHandler : CommandHandler<CreateHabitantCommand>
    {
-      public CreateHabitantHandler(ICommandDispatcher bus, ILogger<CreateHabitantCommand> logger) : base(bus, logger)
+      public CreateHabitantHandler(ICommandDispatcher bus, IMapper mapper, ILogger<CreateHabitantCommand> logger) : base(bus, mapper, logger)
       {
       }
 

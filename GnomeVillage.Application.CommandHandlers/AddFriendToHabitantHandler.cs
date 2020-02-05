@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using AutoMapper;
+using CSharpFunctionalExtensions;
 using GnomeVillage.Application.Commands;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
@@ -11,7 +12,7 @@ namespace GnomeVillage.Application.CommandHandlers
 {
    public class AddFriendToHabitantHandle : CommandHandler<AddFriendToHabitantCommand>
    {
-      public AddFriendToHabitantHandle(ICommandDispatcher bus, ILogger<AddFriendToHabitantCommand> logger) : base(bus, logger)
+      public AddFriendToHabitantHandle(ICommandDispatcher bus, IMapper mapper, ILogger<AddFriendToHabitantCommand> logger) : base(bus, mapper, logger)
       {
       }
 

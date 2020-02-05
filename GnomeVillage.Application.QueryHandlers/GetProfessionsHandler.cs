@@ -1,8 +1,9 @@
-﻿using GnomeVillage.Application.Queries;
+﻿using AutoMapper;
+using GnomeVillage.Application.Queries;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
+using GnomeVillage.ReadModel.Contracts;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,13 +12,16 @@ namespace GnomeVillage.Application.QueryHandlers
 {
    public class GetProfessionsHandler : QueryHandler<GetProfessionsQuery, IEnumerable<string>>
    {
-      public GetProfessionsHandler(IQueryDispatcher bus, ILogger<GetProfessionsQuery> logger) : base(bus, logger)
+      private readonly IProfessionReadOnlyRepository professionReadOnlyRepository;
+
+      public GetProfessionsHandler(IQueryDispatcher bus, IMapper mapper, ILogger<GetProfessionsQuery> logger, IProfessionReadOnlyRepository professionReadOnlyRepository) : base(bus, mapper, logger)
       {
+         this.professionReadOnlyRepository = professionReadOnlyRepository;
       }
 
-      protected override Task<IEnumerable<string>> HandleEx(GetProfessionsQuery query, CancellationToken cancellationToken = default)
+      protected override async Task<IEnumerable<string>> HandleEx(GetProfessionsQuery query, CancellationToken cancellationToken = default)
       {
-         throw new NotImplementedException();
+         return this.Mapper.Map<IEnumerable<string>>(await professionReadOnlyRepository.GetAllAsync().ConfigureAwait(false));
       }
    }
 }

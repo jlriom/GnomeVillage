@@ -1,4 +1,5 @@
-﻿using CSharpFunctionalExtensions;
+﻿using AutoMapper;
+using CSharpFunctionalExtensions;
 using GnomeVillage.Cqrs.Contracts;
 using Microsoft.Extensions.Logging;
 using System;
@@ -12,11 +13,13 @@ namespace GnomeVillage.Cqrs.Implementation
       private readonly bool logHandler = false;
 
       protected readonly IBus Bus;
+      protected readonly IMapper Mapper;
       protected readonly ILogger<TCommand> Logger;
 
-      protected CommandHandler(ICommandDispatcher bus, ILogger<TCommand> logger)
+      protected CommandHandler(ICommandDispatcher bus, IMapper mapper, ILogger<TCommand> logger)
       {
          Bus = bus;
+         Mapper = mapper;
          Logger = logger;
       }
 

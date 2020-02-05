@@ -5,11 +5,11 @@ namespace GnomeVillage.Application.Queries
 {
    public class GetHabitantQuery : IQuery<HabitantViewModel>
    {
-      public GetHabitantQuery(string id)
+      public GetHabitantQuery(int id)
       {
          Id = id;
       }
 
-      public string Id { get; }
+      public int Id { get; }
    }
 }

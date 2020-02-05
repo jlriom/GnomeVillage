@@ -1,10 +1,12 @@
 ﻿using CSharpFunctionalExtensions;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace GnomeVillage.Domain
 {
-   public interface IProfessionReadOnlyRepository
+   public interface IProfessionReadonlyRepository
    {
-      Task<Maybe<Profession>> GetSingle(ProfessionId professionId);
+      Task<Maybe<Profession>> FindAsync(ProfessionId professionId);
+      Task<IList<Profession>> GetAllAsync();
    }
 }
