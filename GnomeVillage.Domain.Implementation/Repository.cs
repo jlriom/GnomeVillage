@@ -29,7 +29,7 @@ namespace GnomeVillage.Domain.Implementation
          return await Task.FromResult(Mapper.Map<IList<TDomainEntity>>(dbSet.ToList()));
       }
 
-      public virtual async Task<IEnumerable<TDomainEntity>> GetAsync<TKey>(Func<T, bool> predicate)
+      public virtual async Task<IEnumerable<TDomainEntity>> GetAsync(Func<T, bool> predicate)
       {
          var entities = dbSet.Where(predicate).Select(Mapper.Map<TDomainEntity>);
          return await Task.FromResult(entities);
