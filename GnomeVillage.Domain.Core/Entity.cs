@@ -7,26 +7,23 @@ namespace GnomeVillage.Domain.Core
    {
       public TKey Id { get; }
 
-      public IList<BrokenRule> BrokenRules { get; } = new List<BrokenRule>();
+      private IList<BrokenRule> BrokenRules { get; } = new List<BrokenRule>();
 
       protected abstract void EnsureValidState();
 
-      public void Validate(string message, ICollection<BrokenRule> brokenRules)
+      public void AddBrokenRule(string brokenRuleDescription)
+      {
+         BrokenRules.Add(new BrokenRule(brokenRuleDescription));
+      }
+
+      public void Validate(string message)
       {
          EnsureValidState();
-
-         foreach (var brokenRule in brokenRules)
-            BrokenRules.Add(brokenRule);
 
          if (BrokenRules.Count> 0)
          {
             throw new DomainException(message, BrokenRules);
          }
-      }
-
-      public void Validate(string message)
-      {
-         Validate(message, new List<BrokenRule>());
       }
    }
 }

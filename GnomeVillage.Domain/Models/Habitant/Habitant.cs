@@ -18,29 +18,19 @@ namespace GnomeVillage.Domain
       protected override void EnsureValidState()
       {
          if (Name == null || (Name != null && string.IsNullOrEmpty(Name.Value)))
-         {
-            BrokenRules.Add(new BrokenRule("Name has to be defined"));
-         }
+            AddBrokenRule("Name has to be defined");
 
          if (Thumbnail == null || (Name != null && Thumbnail.IsWellFormedOriginalString()))
-         {
-            BrokenRules.Add(new BrokenRule("Thumbnail has to be defined"));
-         }
+            AddBrokenRule("Thumbnail has to be defined");
 
          if (Weight < 0)
-         {
-            BrokenRules.Add(new BrokenRule("Weight has to be a positive number"));
-         }
+            AddBrokenRule("Weight has to be a positive number");
 
          if (Height < 0)
-         {
-            BrokenRules.Add(new BrokenRule("Height has to be a positive number"));
-         }
+            AddBrokenRule("Height has to be a positive number");
 
          if (HairColor == null)
-         {
-            BrokenRules.Add(new BrokenRule("HairColor has to be defined"));
-         }
+            AddBrokenRule("HairColor has to be defined");
       }
    }
 }

@@ -54,7 +54,6 @@ namespace GnomeVillage.Api
          services.AddScoped<ReadModel.Contracts.IHairColorReadonlyRepository, ReadModel.Implementation.HairColorReadonlyRepository>();
          services.AddScoped<ReadModel.Contracts.IProfessionReadOnlyRepository, ReadModel.Implementation.ProfessionReadOnlyRepository> ();
 
-         services.AddScoped<Domain.IHabitantRuleCheckerService, Domain.Implementation.HabitantRuleCheckerService>();
          services.AddScoped<Domain.IHabitantReadOnlyRepository, Domain.Implementation.HabitantReadOnlyRepository>();
          services.AddScoped<Domain.IHabitantRepository, Domain.Implementation.HabitantRepository> ();
          services.AddScoped<Domain.IHairColorReadonlyRepository, Domain.Implementation.HairColorReadonlyRepository> ();
