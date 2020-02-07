@@ -16,6 +16,8 @@
     <ProjectReference Include="..\GnomeVillage.Application.Commands\GnomeVillage.Application.Commands.csproj" />
     <ProjectReference Include="..\GnomeVillage.Application.Common\GnomeVillage.Application.Common.csproj" />
     <ProjectReference Include="..\GnomeVillage.Cqrs.Implementation\GnomeVillage.Cqrs.Implementation.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Domain.Core\GnomeVillage.Domain.Core.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Domain\GnomeVillage.Domain.csproj" />
   </ItemGroup>
 
 </Project>

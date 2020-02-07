@@ -15,6 +15,15 @@ namespace GnomeVillage.Domain
       public IList<Profession> Professions { get; set; }
       public IList<HabitantName> Friends { get; set; }
 
+      public Habitant(): base( new HabitantId( int.MinValue))
+      {
+      }
+
+      public Habitant(HabitantId id) : base(id)
+      {
+      }
+
+
       protected override void EnsureValidState()
       {
          if (Name == null || (Name != null && string.IsNullOrEmpty(Name.Value)))

@@ -7,6 +7,7 @@ using GnomeVillage.Application.QueryHandlers;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using GnomeVillage.Data;
+using GnomeVillage.Domain.Models;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -54,10 +55,19 @@ namespace GnomeVillage.Api
          services.AddScoped<ReadModel.Contracts.IHairColorReadonlyRepository, ReadModel.Implementation.HairColorReadonlyRepository>();
          services.AddScoped<ReadModel.Contracts.IProfessionReadOnlyRepository, ReadModel.Implementation.ProfessionReadOnlyRepository> ();
 
+
+         services.AddScoped<HabitantInsertValidator>();
+         services.AddScoped<HabitantUpdateValidator>();
+         services.AddScoped<HabitantDeleteValidator>();
+         services.AddScoped<HabitantAddFriendValidator>();
+         services.AddScoped<HabitantRemoveFriendValidator>();
+
          services.AddScoped<Domain.IHabitantReadOnlyRepository, Domain.Implementation.HabitantReadOnlyRepository>();
          services.AddScoped<Domain.IHabitantRepository, Domain.Implementation.HabitantRepository> ();
          services.AddScoped<Domain.IHairColorReadonlyRepository, Domain.Implementation.HairColorReadonlyRepository> ();
          services.AddScoped<Domain.IProfessionReadonlyRepository, Domain.Implementation.ProfessionReadonlyRepository> ();
+
+
 
          services.AddAutoMapper(typeof(Startup));
 

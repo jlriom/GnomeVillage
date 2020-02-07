@@ -18,8 +18,6 @@ namespace GnomeVillage.Domain.Models
          if (!await ExistHabitantAsync(habitant).ConfigureAwait(false))
             habitant.AddBrokenRule("Habitant not found");
 
-         await CheckCommonDataForUpdateAndInsert(habitant);
-
          habitant.Validate("Can not delete habitant");
       }
    }

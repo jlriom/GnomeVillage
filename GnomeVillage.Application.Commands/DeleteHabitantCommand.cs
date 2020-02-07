@@ -4,11 +4,11 @@ namespace GnomeVillage.Application.Commands
 {
    public class DeleteHabitantCommand : ICommand
    {
-      public DeleteHabitantCommand(string habitantId)
+      public DeleteHabitantCommand(int habitantId)
       {
          HabitantId = habitantId;
       }
 
-      public string HabitantId { get; }
+      public int HabitantId { get; }
    }
 }

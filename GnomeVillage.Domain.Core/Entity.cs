@@ -11,6 +11,11 @@ namespace GnomeVillage.Domain.Core
 
       protected abstract void EnsureValidState();
 
+      protected Entity(TKey id)
+      {
+         this.Id = id;
+      }
+
       public void AddBrokenRule(string brokenRuleDescription)
       {
          BrokenRules.Add(new BrokenRule(brokenRuleDescription));
