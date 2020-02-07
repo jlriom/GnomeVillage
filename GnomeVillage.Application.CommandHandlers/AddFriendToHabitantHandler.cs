@@ -4,10 +4,8 @@ using GnomeVillage.Application.Commands;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using GnomeVillage.Domain;
-using GnomeVillage.Domain.Core;
 using GnomeVillage.Domain.Models;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 

@@ -62,7 +62,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status401Unauthorized)]
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-      public async Task<ActionResult> DeleteHabitant(string habitantId, [FromServices] ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> DeleteHabitant(int habitantId, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new DeleteHabitantCommand(habitantId)));
 
       [HttpPost]
@@ -72,7 +72,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
       [Route("{habitantId}/friend")]
-      public async Task<ActionResult> AddFriendToHabitant(string habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> AddFriendToHabitant(int habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new AddFriendToHabitantCommand(habitantId, friendName)));
 
       [HttpDelete]
@@ -82,7 +82,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
       [Route("{habitantId}/friend")]
-      public async Task<ActionResult> DeleteFriendFromHabitant(string habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> DeleteFriendFromHabitant(int habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
          => Ok(await commandDispatcher.Dispatch(new DeleteFriendFromHabitantCommand(habitantId, friendName)));
 
    }

@@ -6,7 +6,6 @@ using GnomeVillage.Cqrs.Implementation;
 using GnomeVillage.Domain;
 using GnomeVillage.Domain.Models;
 using Microsoft.Extensions.Logging;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 

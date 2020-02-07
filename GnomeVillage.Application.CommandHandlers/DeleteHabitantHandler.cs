@@ -14,7 +14,6 @@ namespace GnomeVillage.Application.CommandHandlers
    public class DeleteHabitantHandler : CommandHandler<DeleteHabitantCommand>
    {
       readonly HabitantDeleteValidator habitantDeleteValidator;
-      readonly IHabitantReadOnlyRepository habitantReadonlyRepository;
       readonly IHabitantRepository habitantRepository;
 
       public DeleteHabitantHandler(
