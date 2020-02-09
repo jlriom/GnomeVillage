@@ -2,7 +2,7 @@
 
 namespace GnomeVillage.Data.Models
 {
-    public partial class Profession
+   public partial class Profession
     {
         public Profession()
         {

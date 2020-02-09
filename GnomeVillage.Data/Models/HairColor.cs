@@ -2,7 +2,7 @@
 
 namespace GnomeVillage.Data.Models
 {
-    public partial class HairColor
+   public partial class HairColor
     {
         public HairColor()
         {

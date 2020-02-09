@@ -2,25 +2,20 @@
 
 namespace GnomeVillage.ReadModel.Contracts.Models
 {
-    public class Habitant
-    {
+    public class Habitant: HabitantBase
+   {
         public Habitant()
         {
-            HabitantFriendsFriend = new HashSet<HabitantFriends>();
-            HabitantFriendsHabitant = new HashSet<HabitantFriends>();
-            HabitantProfessions = new HashSet<HabitantProfessions>();
+            Friends = new List<Friend>();
+            Professions = new List<Profession>();
         }
-
-        public int Id { get; set; }
-        public string Name { get; set; }
+       
         public string Thumbnail { get; set; }
         public int Age { get; set; }
         public int Weight { get; set; }
-        public string HairColorId { get; set; }
 
         public virtual HairColor HairColor { get; set; }
-        public virtual ICollection<HabitantFriends> HabitantFriendsFriend { get; set; }
-        public virtual ICollection<HabitantFriends> HabitantFriendsHabitant { get; set; }
-        public virtual ICollection<HabitantProfessions> HabitantProfessions { get; set; }
+        public virtual IList<Friend> Friends{ get; set; }
+        public virtual IList<Profession> Professions { get; set; }
     }
 }

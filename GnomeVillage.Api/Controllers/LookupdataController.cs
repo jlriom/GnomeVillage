@@ -1,5 +1,4 @@
 ﻿using GnomeVillage.Application.Queries;
-using GnomeVillage.Application.Queries.Dto;
 using GnomeVillage.Cqrs.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

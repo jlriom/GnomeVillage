@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using CSharpFunctionalExtensions;
+using GnomeVillage.Application.Common.Exceptions;
 using GnomeVillage.Application.Queries;
 using GnomeVillage.Application.Queries.Dto;
 using GnomeVillage.Cqrs.Contracts;
@@ -25,7 +26,8 @@ namespace GnomeVillage.Application.QueryHandlers
          var habitant = await habitantReadOnlyRepository.GetSingleAsync(query.Id);
          if (habitant.HasValue)
             return Mapper.Map<HabitantViewModel> (habitant.Value);
-         return null;
+
+         throw new NotFoundException("Habitant not found");
       }
    }
 }

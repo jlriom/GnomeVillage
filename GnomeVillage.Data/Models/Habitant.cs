@@ -2,7 +2,7 @@
 
 namespace GnomeVillage.Data.Models
 {
-    public partial class Habitant
+   public partial class Habitant
     {
         public Habitant()
         {

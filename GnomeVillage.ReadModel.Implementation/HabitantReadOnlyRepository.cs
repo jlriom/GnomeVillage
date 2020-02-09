@@ -3,6 +3,8 @@ using CSharpFunctionalExtensions;
 using GnomeVillage.Data;
 using GnomeVillage.ReadModel.Contracts;
 using GnomeVillage.ReadModel.Contracts.Models;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GnomeVillage.ReadModel.Implementation
@@ -21,7 +23,23 @@ namespace GnomeVillage.ReadModel.Implementation
 
       public async Task<Maybe<Habitant>> GetSingleAsync(int habitantId)
       {
-         return await base.FindAsync(habitantId);
+
+         var habitant = await DbSet
+            .Include(h => h.HairColor)
+            .Include(h => h.HabitantProfessions)
+            .ThenInclude(p => p.Profession)
+            .Include(h => h.HabitantFriendsHabitant)
+            .ThenInclude(p => p.Friend)
+            .FirstOrDefaultAsync(h => h.Id == habitantId);
+
+         if (habitant != null)
+         {
+            var mappedHabitant = Mapper.Map<Habitant>(habitant);
+
+            return Maybe<Habitant>.From(mappedHabitant);
+         }
+
+         return Maybe<Habitant>.None;
       }
    }
 }

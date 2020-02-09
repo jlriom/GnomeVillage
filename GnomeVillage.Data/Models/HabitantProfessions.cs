@@ -2,7 +2,7 @@
 
 namespace GnomeVillage.Data.Models
 {
-    public partial class HabitantProfessions
+   public partial class HabitantProfessions
     {
         public Guid Id { get; set; }
         public int HabitantId { get; set; }
