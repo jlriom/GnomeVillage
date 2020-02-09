@@ -1,16 +1,11 @@
-﻿using System.Collections.Generic;
-
-namespace GnomeVillage.ReadModel.Contracts.Models
+﻿namespace GnomeVillage.ReadModel.Contracts.Models
 {
-    public class Profession
+   public class Profession
     {
-        public Profession()
-        {
-            HabitantProfessions = new HashSet<HabitantProfessions>();
-        }
-
-        public string Name { get; set; }
-
-        public virtual ICollection<HabitantProfessions> HabitantProfessions { get; set; }
-    }
+      public string Name { get; set; }
+      public override string ToString()
+      {
+         return Name;
+      }
+   }
 }

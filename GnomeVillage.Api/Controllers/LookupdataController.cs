@@ -30,7 +30,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status400BadRequest)]
       [ProducesResponseType(StatusCodes.Status401Unauthorized)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-      public async Task<ActionResult<IEnumerable<HabitantViewModel>>> GetProfessions([FromServices] IQueryDispatcher queryDispatcher)
+      public async Task<ActionResult<IEnumerable<string>>> GetProfessions([FromServices] IQueryDispatcher queryDispatcher)
          => Ok(await queryDispatcher.Dispatch(new GetProfessionsQuery()));
 
 

@@ -8,6 +8,7 @@ using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using GnomeVillage.Data;
 using GnomeVillage.Domain.Models;
+using GnomeVillage.ReadModel.Implementation.Mappings;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -69,7 +70,7 @@ namespace GnomeVillage.Api
 
 
 
-         services.AddAutoMapper(typeof(Startup));
+         services.AddAutoMapper(typeof(ReadModelMappingReference));
 
       }
 
