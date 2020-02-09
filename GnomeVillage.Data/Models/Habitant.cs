@@ -15,7 +15,8 @@ namespace GnomeVillage.Data.Models
         public string Name { get; set; }
         public string Thumbnail { get; set; }
         public int Age { get; set; }
-        public int Weight { get; set; }
+        public decimal Weight { get; set; }
+        public decimal Height { get; set; }
         public string HairColorId { get; set; }
 
         public virtual HairColor HairColor { get; set; }

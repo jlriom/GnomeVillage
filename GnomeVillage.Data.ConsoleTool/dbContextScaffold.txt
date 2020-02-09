@@ -1,1 +1,1 @@
-﻿ dotnet ef dbcontext scaffold "Server=.;Database=GnomeVillage;User ID=sa;Password=Axa12345;" Microsoft.EntityFrameworkCore.SqlServer -o Models --startup-project ..\GnomeVillage.Data.ConsoleTool\GnomeVillage.Data.ConsoleTool.csproj
+﻿ dotnet ef dbcontext scaffold "Server=.;Database=GnomeVillage;User ID=sa;Password=Axa12345;" Microsoft.EntityFrameworkCore.SqlServer -o Models --force --startup-project ..\GnomeVillage.Data.ConsoleTool\GnomeVillage.Data.ConsoleTool.csproj

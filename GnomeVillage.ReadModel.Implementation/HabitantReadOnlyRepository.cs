@@ -4,7 +4,6 @@ using GnomeVillage.Data;
 using GnomeVillage.ReadModel.Contracts;
 using GnomeVillage.ReadModel.Contracts.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace GnomeVillage.ReadModel.Implementation
@@ -34,9 +33,7 @@ namespace GnomeVillage.ReadModel.Implementation
 
          if (habitant != null)
          {
-            var mappedHabitant = Mapper.Map<Habitant>(habitant);
-
-            return Maybe<Habitant>.From(mappedHabitant);
+            return Maybe<Habitant>.From(Mapper.Map<Habitant>(habitant));
          }
 
          return Maybe<Habitant>.None;

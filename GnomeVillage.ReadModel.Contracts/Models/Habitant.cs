@@ -12,8 +12,8 @@ namespace GnomeVillage.ReadModel.Contracts.Models
        
         public string Thumbnail { get; set; }
         public int Age { get; set; }
-        public int Weight { get; set; }
-
+        public decimal Weight { get; set; }
+        public decimal Height { get; set; }
         public virtual HairColor HairColor { get; set; }
         public virtual IList<Friend> Friends{ get; set; }
         public virtual IList<Profession> Professions { get; set; }

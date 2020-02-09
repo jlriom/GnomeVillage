@@ -19,8 +19,4 @@
     <ProjectReference Include="..\GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Mappings\" />
-  </ItemGroup>
-
 </Project>

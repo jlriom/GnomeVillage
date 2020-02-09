@@ -5,7 +5,7 @@
       public int Id { get; set; }
       public string Name { get; set; }
       public string Thumbnail { get; set; }
-      public int Age { get; }
+      public int Age { get; set; }
       public decimal Weight { get; set; }
       public decimal Height { get; set; }
       public string HairColor { get; set; }

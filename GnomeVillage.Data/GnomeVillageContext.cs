@@ -20,7 +20,6 @@ namespace GnomeVillage.Data
       public virtual DbSet<HairColor> HairColor { get; set; }
       public virtual DbSet<Profession> Profession { get; set; }
 
-
       protected override void OnModelCreating(ModelBuilder modelBuilder)
       {
          modelBuilder.Entity<Habitant>(entity =>
@@ -31,6 +30,8 @@ namespace GnomeVillage.Data
                 .IsRequired()
                 .HasMaxLength(200);
 
+            entity.Property(e => e.Height).HasColumnType("decimal(5, 2)");
+
             entity.Property(e => e.Name)
                 .IsRequired()
                 .HasMaxLength(200);
@@ -38,6 +39,8 @@ namespace GnomeVillage.Data
             entity.Property(e => e.Thumbnail)
                 .IsRequired()
                 .HasMaxLength(2000);
+
+            entity.Property(e => e.Weight).HasColumnType("decimal(5, 2)");
 
             entity.HasOne(d => d.HairColor)
                 .WithMany(p => p.Habitant)
@@ -52,7 +55,7 @@ namespace GnomeVillage.Data
                 .HasName("IX_HabitantFriends")
                 .IsUnique();
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
+            entity.Property(e => e.Id).HasDefaultValueSql("(newid())");
 
             entity.HasOne(d => d.Friend)
                 .WithMany(p => p.HabitantFriendsFriend)

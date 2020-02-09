@@ -4,6 +4,7 @@ using GnomeVillage.Application.CommandHandlers;
 using GnomeVillage.Application.Commands;
 using GnomeVillage.Application.Queries;
 using GnomeVillage.Application.QueryHandlers;
+using GnomeVillage.Application.QueryHandlers.Mappings;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using GnomeVillage.Data;
@@ -70,7 +71,9 @@ namespace GnomeVillage.Api
 
 
 
-         services.AddAutoMapper(typeof(ReadModelMappingReference));
+         services.AddAutoMapper(
+            typeof(ApplicationQueryMappingReference),
+            typeof(ReadModelMappingReference));
 
       }
 
