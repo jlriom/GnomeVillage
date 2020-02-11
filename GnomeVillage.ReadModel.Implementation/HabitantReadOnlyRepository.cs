@@ -17,7 +17,8 @@ namespace GnomeVillage.ReadModel.Implementation
 
       public async Task<Paging<Habitant>> GetAsync(int limit, int offset)
       {
-         return await base.GetAsync(habitant => true, h => h.Name, limit, offset);
+         var habitants = await base.GetAsync(h => h.HairColor,    habitant => true, h => h.Name, limit, offset).ConfigureAwait(false);
+         return habitants;
       }
 
       public async Task<Maybe<Habitant>> GetSingleAsync(int habitantId)

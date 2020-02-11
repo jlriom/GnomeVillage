@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
 
 namespace GnomeVillage.ReadModel.Implementation
@@ -28,12 +29,26 @@ namespace GnomeVillage.ReadModel.Implementation
          return await Task.FromResult(Mapper.Map<IList<TReadonlyEntity>> (DbSet.ToList()));
       }
 
-      public virtual async Task<Paging<TReadonlyEntity>> GetAsync<TKey>(Func<T, bool> predicate, Func<T, TKey> keySelector, int limit, int offset)
+      public virtual async Task<Paging<TReadonlyEntity>> GetAsync<TKey>( Func<T, bool> predicate, Func<T, TKey> keySelector, int limit, int offset)
       {
          var entitiesCount = DbSet.Count(predicate);
-         var entities = DbSet.Where(predicate).OrderBy(keySelector).Skip(offset).Take(limit).Select(Mapper.Map<TReadonlyEntity>);
+         var entities = DbSet
+            .Where(predicate)
+            .OrderBy(keySelector).Skip(offset).Take(limit).Select(Mapper.Map<TReadonlyEntity>);
          return await Task.FromResult(new Paging<TReadonlyEntity>(entities, limit, offset, entitiesCount));
       }
+
+      public virtual async Task<Paging<TReadonlyEntity>> GetAsync<TKey, TProperty>(Expression<Func<T, TProperty>> navigationPropertyPath, Func<T, bool> predicate, Func<T, TKey> keySelector, int limit, int offset)
+      {
+         var entitiesCount = DbSet.Count(predicate);
+         var entities = DbSet
+            .Include(navigationPropertyPath)
+            .Where(predicate)
+            .OrderBy(keySelector).Skip(offset).Take(limit).Select(Mapper.Map<TReadonlyEntity>);
+         return await Task.FromResult(new Paging<TReadonlyEntity>(entities, limit, offset, entitiesCount));
+      }
+
+      // [NotNullAttribute] Expression<Func<TEntity, TProperty>> navigationPropertyPath) 
 
       public virtual async Task<Maybe<TReadonlyEntity>> FindAsync(params object[] keyValues)
       {
