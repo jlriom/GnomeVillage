@@ -1,6 +1,7 @@
 using AutoMapper;
 using GnomeVillage.Api.Core;
 using GnomeVillage.Application.CommandHandlers;
+using GnomeVillage.Application.CommandHandlers.Mappings;
 using GnomeVillage.Application.Commands;
 using GnomeVillage.Application.Queries;
 using GnomeVillage.Application.QueryHandlers;
@@ -8,6 +9,7 @@ using GnomeVillage.Application.QueryHandlers.Mappings;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using GnomeVillage.Data;
+using GnomeVillage.Domain.Implementation.Mappings;
 using GnomeVillage.Domain.Models;
 using GnomeVillage.ReadModel.Implementation.Mappings;
 using MediatR;
@@ -52,11 +54,9 @@ namespace GnomeVillage.Api
             typeof(QueriesReference).Assembly,
          });
 
-
          services.AddScoped<ReadModel.Contracts.IHabitantReadOnlyRepository, ReadModel.Implementation.HabitantReadOnlyRepository> ();
          services.AddScoped<ReadModel.Contracts.IHairColorReadonlyRepository, ReadModel.Implementation.HairColorReadonlyRepository>();
          services.AddScoped<ReadModel.Contracts.IProfessionReadOnlyRepository, ReadModel.Implementation.ProfessionReadOnlyRepository> ();
-
 
          services.AddScoped<HabitantInsertValidator>();
          services.AddScoped<HabitantUpdateValidator>();
@@ -69,12 +69,11 @@ namespace GnomeVillage.Api
          services.AddScoped<Domain.IHairColorReadonlyRepository, Domain.Implementation.HairColorReadonlyRepository> ();
          services.AddScoped<Domain.IProfessionReadonlyRepository, Domain.Implementation.ProfessionReadonlyRepository> ();
 
-
-
          services.AddAutoMapper(
             typeof(ApplicationQueryMappingReference),
-            typeof(ReadModelMappingReference));
-
+            typeof(ReadModelMappingReference),
+            typeof(ApplicationCommandMappingsReference),
+            typeof(DomainMappingsReference));
       }
 
       public void Configure(IApplicationBuilder app)

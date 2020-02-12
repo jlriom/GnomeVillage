@@ -10,7 +10,7 @@ namespace GnomeVillage.Cqrs.Implementation
 {
    public abstract class CommandHandler<TCommand> : ICommandHandler<TCommand> where TCommand : ICommand
    {
-      private readonly bool logHandler = false;
+      private readonly bool logHandler = true;
 
       protected readonly IBus Bus;
       protected readonly IMapper Mapper;
