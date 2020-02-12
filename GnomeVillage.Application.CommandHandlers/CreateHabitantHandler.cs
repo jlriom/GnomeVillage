@@ -29,7 +29,7 @@ namespace GnomeVillage.Application.CommandHandlers
 
       protected override async Task<Result> HandleEx(CreateHabitantCommand command, CancellationToken cancellationToken = default)
       {
-         var habitant = Mapper.Map<Habitant>(command.Data);
+         var habitant = HabitantFactory.CreateFromCommand(command.Data);
 
          await habitantInsertValidator.Validate(habitant).ConfigureAwait(false);
 

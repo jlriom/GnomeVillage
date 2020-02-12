@@ -8,7 +8,7 @@ namespace GnomeVillage.Domain
    {
       public HabitantName Name { get; set; }
       public Uri Thumbnail { get; set; }
-      public int Age { get; }
+      public int Age { get; set; }
       public decimal Weight { get; set; }
       public decimal Height { get; set; }
       public HairColor HairColor { get; set; }

@@ -1,7 +1,6 @@
 using AutoMapper;
 using GnomeVillage.Api.Core;
 using GnomeVillage.Application.CommandHandlers;
-using GnomeVillage.Application.CommandHandlers.Mappings;
 using GnomeVillage.Application.Commands;
 using GnomeVillage.Application.Queries;
 using GnomeVillage.Application.QueryHandlers;
@@ -72,7 +71,6 @@ namespace GnomeVillage.Api
          services.AddAutoMapper(
             typeof(ApplicationQueryMappingReference),
             typeof(ReadModelMappingReference),
-            typeof(ApplicationCommandMappingsReference),
             typeof(DomainMappingsReference));
       }
 
