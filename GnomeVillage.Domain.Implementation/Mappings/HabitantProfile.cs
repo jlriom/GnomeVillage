@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace GnomeVillage.Domain.Implementation.Mappings
@@ -28,7 +27,20 @@ namespace GnomeVillage.Domain.Implementation.Mappings
                   Profession = null
                }).ToList()
             })
-            ;
+         .ReverseMap()
+         .ForMember(dest => dest.HairColor, src => src.Ignore())
+         .ForMember(dest => dest.Friends, src => src.Ignore())
+         .ConstructUsing(src => new Habitant(new HabitantId (src.Id))
+         {
+            Name = HabitantName.FromString(src.Name),
+             Age = src.Age,
+             HairColor = new HairColor(new HairColorId(src.HairColorId)),
+             Height =src.Height,
+             Thumbnail = new Uri (src.Thumbnail), 
+             Weight = src.Weight,
+             Professions = src.HabitantProfessions
+                  .Select( p => new Profession(new ProfessionId( p.ProfessionId))).ToList()
+         });
       }
    }
 }
