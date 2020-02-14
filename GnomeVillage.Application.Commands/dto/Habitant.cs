@@ -9,6 +9,5 @@
       public decimal Height { get; set; }
       public string HairColor { get; set; }
       public string[] Professions { get; set; }
-      public string[] Friends { get; set; }
    }
 }

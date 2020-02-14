@@ -29,7 +29,6 @@ namespace GnomeVillage.Domain.Models
          return (await habitantReadOnlyRepository.GetSingleAsync(habitantName).ConfigureAwait(false)).HasValue;
       }
 
-
       protected async Task<bool> ExistHairColorForHabitant(Habitant habitant)
       {
          return (await hairColorReadonlyRepository.FindAsync(habitant.HairColor.Id).ConfigureAwait(false)).HasValue;
@@ -39,7 +38,7 @@ namespace GnomeVillage.Domain.Models
       {
          var allProfessions = await professionReadonlyRepository.GetAllAsync().ConfigureAwait(false);
 
-         return allProfessions.All(p => habitant.Professions.Contains(p));
+         return habitant.Professions.All(p => allProfessions.Contains(p));
       }
 
       protected async Task CheckCommonDataForUpdateAndInsert(Habitant habitant)
@@ -62,6 +61,5 @@ namespace GnomeVillage.Domain.Models
             }
          }
       }
-
    }
 }

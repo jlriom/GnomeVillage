@@ -40,7 +40,13 @@ namespace GnomeVillage.Api
          });
 
          services.AddDbContext<GnomeVillageContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("GnomeVillageContext")));
+         {
+            options.UseSqlServer(Configuration.GetConnectionString("GnomeVillageContext"));
+            options.EnableSensitiveDataLogging(true);
+            options.EnableDetailedErrors(true);
+            options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking); 
+
+         });
 
 
          services.AddScoped<IUser, User>();

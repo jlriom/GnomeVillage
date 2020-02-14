@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GnomeVillage.Domain.Implementation
 {
-   public class HabitantReadOnlyRepository : Repository <Data.Models.Habitant, Habitant, HabitantId>, IHabitantReadOnlyRepository
+   public class HabitantReadOnlyRepository : Repository <Data.Models.Habitant, int, Habitant, HabitantId>, IHabitantReadOnlyRepository
    {
 
       public HabitantReadOnlyRepository(GnomeVillageContext context, IMapper mapper) : base(context, mapper)
@@ -23,8 +23,8 @@ namespace GnomeVillage.Domain.Implementation
          var found = await base.GetAsync( h => h.Name == habitantName).ConfigureAwait(false);
 
          return found.Any()
-            ? Maybe<Habitant>.None
-            : Maybe<Habitant>.From(found.First());
+            ? Maybe<Habitant>.From(found.First())
+            : Maybe<Habitant>.None;
       }
    }
 }

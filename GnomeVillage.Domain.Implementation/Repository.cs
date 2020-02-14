@@ -9,58 +9,60 @@ using System.Threading.Tasks;
 
 namespace GnomeVillage.Domain.Implementation
 {
-   public abstract class Repository<T, TDomainEntity, Tkey>
+   public abstract class Repository<T, TKey, TDomainEntity, TDomainEntitykey>
       where T : class
       where TDomainEntity : class
    {
-      private readonly DbSet<T> dbSet;
-      private readonly GnomeVillageContext context;
+      protected readonly DbSet<T> DbSet;
+      protected readonly GnomeVillageContext Context;
       protected readonly IMapper Mapper;
 
       protected Repository(GnomeVillageContext context, IMapper mapper)
       {
-         this.context = context;
-         dbSet = this.context.Set<T>();
+         this.Context = context;
+         DbSet = this.Context.Set<T>();
          Mapper = mapper;
       }
 
       public virtual async Task<IList<TDomainEntity>> GetAllAsync()
       {
-         return await Task.FromResult(Mapper.Map<IList<TDomainEntity>>(dbSet.ToList()));
+         return await Task.FromResult(Mapper.Map<IList<TDomainEntity>>(DbSet.ToList()));
       }
 
       public virtual async Task<IEnumerable<TDomainEntity>> GetAsync(Func<T, bool> predicate)
       {
-         var entities = dbSet.Where(predicate).Select(Mapper.Map<TDomainEntity>);
+         var entities = DbSet.Where(predicate).Select(Mapper.Map<TDomainEntity>);
          return await Task.FromResult(entities);
       }
 
-      public virtual async Task<Maybe<TDomainEntity>> FindAsync(Tkey keyValue)
+      public virtual async Task<Maybe<TDomainEntity>> FindAsync(TDomainEntitykey keyValue)
       {
-         var entity = await dbSet.FindAsync(keyValue);
-         return entity == null ? Maybe<TDomainEntity>.From(Mapper.Map<TDomainEntity>(entity)) : Maybe<TDomainEntity>.None;
+         var entity = await DbSet.FindAsync(Mapper.Map<TKey>(keyValue));
+         return entity == null
+            ? Maybe<TDomainEntity>.None
+            : Maybe<TDomainEntity>.From(Mapper.Map<TDomainEntity>(entity));
       }
 
       public async Task<TDomainEntity> DeleteAsync(TDomainEntity domainEntity)
       {
-         dbSet.Remove(Mapper.Map<T>(domainEntity));
-         await context.SaveChangesAsync().ConfigureAwait(false);
+         DbSet.Remove(Mapper.Map<T>(domainEntity));
+         await Context.SaveChangesAsync().ConfigureAwait(false);
          return domainEntity;
       }
 
-      public async Task<TDomainEntity> InsertAsync(TDomainEntity domainEntity)
+      public virtual async Task<TDomainEntity> InsertAsync(TDomainEntity domainEntity)
       {
-         dbSet.Add(Mapper.Map<T>(domainEntity));
-         await context.SaveChangesAsync().ConfigureAwait(false);
+         var entity = Mapper.Map<T>(domainEntity);
+         DbSet.Add(entity);
+         await Context.SaveChangesAsync().ConfigureAwait(false);
          return domainEntity;
       }
 
       public async Task<TDomainEntity> UpdateAsync(TDomainEntity domainEntity)
       {
-         dbSet.Update(Mapper.Map<T>(domainEntity));
-         await context.SaveChangesAsync().ConfigureAwait(false);
+         DbSet.Update(Mapper.Map<T>(domainEntity));
+         await Context.SaveChangesAsync().ConfigureAwait(false);
          return domainEntity;
       }
-
    }
 }

@@ -24,8 +24,6 @@ namespace GnomeVillage.Data
       {
          modelBuilder.Entity<Habitant>(entity =>
          {
-            entity.Property(e => e.Id).ValueGeneratedNever();
-
             entity.Property(e => e.HairColorId)
                 .IsRequired()
                 .HasMaxLength(200);
@@ -110,6 +108,7 @@ namespace GnomeVillage.Data
 
             entity.Property(e => e.Name).HasMaxLength(200);
          });
+
       }
    }
 }
