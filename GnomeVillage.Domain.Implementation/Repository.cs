@@ -43,11 +43,15 @@ namespace GnomeVillage.Domain.Implementation
             : Maybe<TDomainEntity>.From(Mapper.Map<TDomainEntity>(entity));
       }
 
-      public async Task<TDomainEntity> DeleteAsync(TDomainEntity domainEntity)
+      public async Task<TDomainEntity> DeleteAsync(TDomainEntitykey keyValue)
       {
-         DbSet.Remove(Mapper.Map<T>(domainEntity));
-         await Context.SaveChangesAsync().ConfigureAwait(false);
-         return domainEntity;
+         var entity = await DbSet.FindAsync(Mapper.Map<TKey>(keyValue));
+         if (entity != null)
+         {
+            DbSet.Remove(entity);
+            await Context.SaveChangesAsync().ConfigureAwait(false);
+         }
+         return null;
       }
 
       public virtual async Task<TDomainEntity> InsertAsync(TDomainEntity domainEntity)

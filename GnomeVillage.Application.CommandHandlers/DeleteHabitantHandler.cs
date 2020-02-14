@@ -34,7 +34,7 @@ namespace GnomeVillage.Application.CommandHandlers
 
          await habitantDeleteValidator.Validate(habitant).ConfigureAwait(false);
 
-         await habitantRepository.DeleteAsync(habitant).ConfigureAwait(false);
+         await habitantRepository.DeleteAsync(habitant.Id).ConfigureAwait(false);
 
          return Result.Ok();
       }

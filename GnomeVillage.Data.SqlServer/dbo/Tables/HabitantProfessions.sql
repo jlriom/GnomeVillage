@@ -1,10 +1,10 @@
 ﻿CREATE TABLE [dbo].[HabitantProfessions] (
-    [Id]           UNIQUEIDENTIFIER NOT NULL,
+    [Id]           UNIQUEIDENTIFIER CONSTRAINT [DF_HabitantProfessions_Id] DEFAULT (newid()) ROWGUIDCOL NOT NULL,
     [HabitantId]   INT              NOT NULL,
-    [ProfessionId] NCHAR (200)      NOT NULL,
+    [ProfessionId] NVARCHAR (200)   NOT NULL,
     CONSTRAINT [PK_HabitantProfessions] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_HabitantProfessions_Habitant] FOREIGN KEY ([HabitantId]) REFERENCES [dbo].[Habitant] ([Id]),
-    CONSTRAINT [FK_HabitantProfessions_Professions] FOREIGN KEY ([ProfessionId]) REFERENCES [dbo].[Profession] ([Name])
+    CONSTRAINT [FK_HabitantProfessions_Habitant] FOREIGN KEY ([HabitantId]) REFERENCES [dbo].[Habitant] ([Id]) ON DELETE CASCADE ON UPDATE CASCADE,
+    CONSTRAINT [FK_HabitantProfessions_Professions] FOREIGN KEY ([ProfessionId]) REFERENCES [dbo].[Profession] ([Name]) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 

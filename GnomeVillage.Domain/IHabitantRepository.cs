@@ -6,6 +6,6 @@ namespace GnomeVillage.Domain
    {
       Task<Habitant> InsertAsync(Habitant habitant);
       Task<Habitant> UpdateAsync(Habitant habitant);
-      Task<Habitant> DeleteAsync(Habitant habitant);
+      Task<Habitant> DeleteAsync(HabitantId habitantId);
    }
 }

@@ -6,7 +6,7 @@
     <Name>GnomeVillage.Data.SqlServer</Name>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectVersion>4.1</ProjectVersion>
-    <ProjectGuid>{df3d9384-edc9-488c-999e-d1144a8cc8f2}</ProjectGuid>
+    <ProjectGuid>{766a4e4c-f5c7-4f4f-82ef-7a96ecc424b8}</ProjectGuid>
     <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
     <OutputType>Database</OutputType>
     <RootPath>
@@ -62,10 +62,10 @@
     <Folder Include="dbo\Tables\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Profession.sql" />
-    <Build Include="dbo\Tables\HairColor.sql" />
     <Build Include="dbo\Tables\Habitant.sql" />
     <Build Include="dbo\Tables\HabitantFriends.sql" />
+    <Build Include="dbo\Tables\Profession.sql" />
     <Build Include="dbo\Tables\HabitantProfessions.sql" />
+    <Build Include="dbo\Tables\HairColor.sql" />
   </ItemGroup>
 </Project>

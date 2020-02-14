@@ -16,9 +16,10 @@ namespace GnomeVillage.Domain.Models
       public async Task Validate(Habitant habitant)
       {
          if (!await ExistHabitantAsync(habitant).ConfigureAwait(false))
+         {
             habitant.AddBrokenRule("Habitant not found");
-
-         habitant.Validate("Can not delete habitant");
+            habitant.Validate("Can not delete habitant");
+         }
       }
    }
 }

@@ -27,15 +27,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Application.Co
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Domain.Core", "GnomeVillage.Domain.Core\GnomeVillage.Domain.Core.csproj", "{91462C65-3207-493D-94F7-F4092F9F7C08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Data.ConsoleTool", "GnomeVillage.Data.ConsoleTool\GnomeVillage.Data.ConsoleTool.csproj", "{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Data.ConsoleTool", "GnomeVillage.Data.ConsoleTool\GnomeVillage.Data.ConsoleTool.csproj", "{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Domain.Implementation", "GnomeVillage.Domain.Implementation\GnomeVillage.Domain.Implementation.csproj", "{004739C4-3EDF-4465-AB8E-1BF178D5F848}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Domain.Implementation", "GnomeVillage.Domain.Implementation\GnomeVillage.Domain.Implementation.csproj", "{004739C4-3EDF-4465-AB8E-1BF178D5F848}"
 EndProject
-Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GnomeVillage.Data.SqlServer", "GnomeVillage.Data.SqlServer\GnomeVillage.Data.SqlServer.sqlproj", "{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.ReadModel.Contracts", "GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj", "{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.ReadModel.Contracts", "GnomeVillage.ReadModel.Contracts\GnomeVillage.ReadModel.Contracts.csproj", "{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.ReadModel.Implementation", "GnomeVillage.ReadModel.Implementation\GnomeVillage.ReadModel.Implementation.csproj", "{F2D31144-4AFA-4191-A97A-C5C0FF004D62}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.ReadModel.Implementation", "GnomeVillage.ReadModel.Implementation\GnomeVillage.ReadModel.Implementation.csproj", "{F2D31144-4AFA-4191-A97A-C5C0FF004D62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReadModel", "ReadModel", "{EA26F975-8FD8-4E8D-9569-9FE4E8949E8C}"
 EndProject
@@ -48,6 +46,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{10118347-4336-46E6-8799-7FD3C0DD166E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{E5180460-DD0E-4C7C-9373-6BF68D9185F4}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "GnomeVillage.Data.SqlServer", "GnomeVillage.Data.SqlServer\GnomeVillage.Data.SqlServer.sqlproj", "{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -111,12 +111,6 @@ Global
 		{004739C4-3EDF-4465-AB8E-1BF178D5F848}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{004739C4-3EDF-4465-AB8E-1BF178D5F848}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{004739C4-3EDF-4465-AB8E-1BF178D5F848}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2}.Release|Any CPU.Deploy.0 = Release|Any CPU
 		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -125,6 +119,12 @@ Global
 		{F2D31144-4AFA-4191-A97A-C5C0FF004D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F2D31144-4AFA-4191-A97A-C5C0FF004D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F2D31144-4AFA-4191-A97A-C5C0FF004D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -144,13 +144,13 @@ Global
 		{91462C65-3207-493D-94F7-F4092F9F7C08} = {C40415BF-2B9C-41C0-9B3E-09FCBB4F1897}
 		{B31D44FC-0ED6-4E11-AFF6-D3EE6ADC4B47} = {10118347-4336-46E6-8799-7FD3C0DD166E}
 		{004739C4-3EDF-4465-AB8E-1BF178D5F848} = {C07DCE21-EED9-43A0-A7DA-7018CF5156F5}
-		{DF3D9384-EDC9-488C-999E-D1144A8CC8F2} = {10118347-4336-46E6-8799-7FD3C0DD166E}
 		{71F19CA3-A9F9-4221-A2B5-47C9DF29472B} = {EA26F975-8FD8-4E8D-9569-9FE4E8949E8C}
 		{F2D31144-4AFA-4191-A97A-C5C0FF004D62} = {EA26F975-8FD8-4E8D-9569-9FE4E8949E8C}
 		{EA26F975-8FD8-4E8D-9569-9FE4E8949E8C} = {12EF3F02-395B-4E71-97BA-BE3F2795A050}
 		{C07DCE21-EED9-43A0-A7DA-7018CF5156F5} = {12EF3F02-395B-4E71-97BA-BE3F2795A050}
 		{C40415BF-2B9C-41C0-9B3E-09FCBB4F1897} = {12EF3F02-395B-4E71-97BA-BE3F2795A050}
 		{10118347-4336-46E6-8799-7FD3C0DD166E} = {12EF3F02-395B-4E71-97BA-BE3F2795A050}
+		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8} = {10118347-4336-46E6-8799-7FD3C0DD166E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FBE4D75-BFD1-4EE9-8842-793EFC8A00E4}
