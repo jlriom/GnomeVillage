@@ -54,9 +54,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Application.Commands.Dtos", "GnomeVillage.Application.Commands.Dtos\GnomeVillage.Application.Commands.Dtos.csproj", "{A42D3A60-9405-44AA-92EA-C5F59C304C63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Application.Commands.Dtos", "GnomeVillage.Application.Commands.Dtos\GnomeVillage.Application.Commands.Dtos.csproj", "{A42D3A60-9405-44AA-92EA-C5F59C304C63}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GnomeVillage.Application.Queries.Dtos", "GnomeVillage.Application.Queries.Dtos\GnomeVillage.Application.Queries.Dtos.csproj", "{F31CDBFB-EB36-4377-A3C6-5909476FFB4B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Application.Queries.Dtos", "GnomeVillage.Application.Queries.Dtos\GnomeVillage.Application.Queries.Dtos.csproj", "{F31CDBFB-EB36-4377-A3C6-5909476FFB4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
