@@ -18,7 +18,7 @@
 - Html
 - Css
 
-# Libraries & Tecnologies
+# Libraries & Technologies
 
 - Blazor 
 - Bootstrap
