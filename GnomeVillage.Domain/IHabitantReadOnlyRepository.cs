@@ -7,5 +7,6 @@ namespace GnomeVillage.Domain
    {
       Task<Maybe<Habitant>> GetSingleAsync(HabitantId habitantId);
       Task<Maybe<Habitant>> GetSingleAsync(HabitantName habitantName);
+      Task<Maybe<Habitant>> GetOtherHabitantWithNameSingleAsync(HabitantName habitantName, HabitantId habitantId);
    }
 }

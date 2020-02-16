@@ -28,6 +28,10 @@ namespace GnomeVillage.Domain.Models
       {
          return (await habitantReadOnlyRepository.GetSingleAsync(habitantName).ConfigureAwait(false)).HasValue;
       }
+      protected async Task<bool> ExistHabitantWithNameAsync(Habitant habitant)
+      {
+         return (await habitantReadOnlyRepository.GetOtherHabitantWithNameSingleAsync(habitant.Name, habitant.Id).ConfigureAwait(false)).HasValue;
+      }
 
       protected async Task<bool> ExistHairColorForHabitant(Habitant habitant)
       {

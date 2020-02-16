@@ -26,5 +26,14 @@ namespace GnomeVillage.Domain.Implementation
             ? Maybe<Habitant>.From(found.First())
             : Maybe<Habitant>.None;
       }
+
+      public async Task<Maybe<Habitant>> GetOtherHabitantWithNameSingleAsync(HabitantName habitantName, HabitantId habitantId)
+      {
+         var found = await base.GetAsync(h => h.Name == habitantName && h.Id != habitantId).ConfigureAwait(false);
+
+         return found.Any()
+            ? Maybe<Habitant>.From(found.First())
+            : Maybe<Habitant>.None;
+      }
    }
 }
