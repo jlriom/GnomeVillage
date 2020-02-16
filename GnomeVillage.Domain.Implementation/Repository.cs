@@ -46,11 +46,13 @@ namespace GnomeVillage.Domain.Implementation
       public async Task<TDomainEntity> DeleteAsync(TDomainEntitykey keyValue)
       {
          var entity = await DbSet.FindAsync(Mapper.Map<TKey>(keyValue));
-         if (entity != null)
-         {
-            DbSet.Remove(entity);
-            await Context.SaveChangesAsync().ConfigureAwait(false);
-         }
+
+         if (entity == null)
+            throw new KeyNotFoundException(typeof(T).Name);
+
+         DbSet.Remove(entity);
+         await Context.SaveChangesAsync().ConfigureAwait(false);
+
          return null;
       }
 
@@ -62,9 +64,16 @@ namespace GnomeVillage.Domain.Implementation
          return domainEntity;
       }
 
-      public async Task<TDomainEntity> UpdateAsync(TDomainEntity domainEntity)
+      public async Task<TDomainEntity> UpdateAsync(TDomainEntitykey keyValue, TDomainEntity domainEntity)
       {
-         DbSet.Update(Mapper.Map<T>(domainEntity));
+
+         var entity = await DbSet.FindAsync(Mapper.Map<TKey>(keyValue));
+
+         if (entity == null)
+            throw new KeyNotFoundException(typeof(T).Name);
+
+         var updatedEntity = Mapper.Map<T>(domainEntity);
+         DbSet.Update(updatedEntity);
          await Context.SaveChangesAsync().ConfigureAwait(false);
          return domainEntity;
       }

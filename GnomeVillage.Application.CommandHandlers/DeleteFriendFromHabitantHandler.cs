@@ -39,7 +39,7 @@ namespace GnomeVillage.Application.CommandHandlers
 
          habitant.Value.Friends.Remove(HabitantName.FromString(command.FriendName));
 
-         await habitantRepository.UpdateAsync(habitant.Value).ConfigureAwait(false);
+         await habitantRepository.UpdateAsync(habitant.Value.Id, habitant.Value).ConfigureAwait(false);
 
          return Result.Ok();
       }

@@ -3,6 +3,7 @@ using GnomeVillage.Domain.Core;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Http;
+using Newtonsoft.Json;
 
 namespace GnomeVillage.Api.Core
 {
@@ -22,6 +23,7 @@ namespace GnomeVillage.Api.Core
 
                if (exceptionHandlerPathFeature?.Error != null)
                {
+                  var body = JsonConvert.SerializeObject(exceptionHandlerPathFeature?.Error);
                   if (exceptionHandlerPathFeature?.Error is AppException || exceptionHandlerPathFeature?.Error is DomainException)
                   {
                      context.Response.StatusCode = StatusCodes.Status400BadRequest;
@@ -34,7 +36,7 @@ namespace GnomeVillage.Api.Core
                   {
                      context.Response.StatusCode = StatusCodes.Status401Unauthorized;
                   }
-                  await context.Response.WriteAsync(exceptionHandlerPathFeature?.Error.ToString());
+                  await context.Response.WriteAsync(body);
                }
             });
          });

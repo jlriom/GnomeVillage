@@ -30,11 +30,11 @@ namespace GnomeVillage.Application.CommandHandlers
 
       protected override async Task<Result> HandleEx(UpdateHabitantCommand command, CancellationToken cancellationToken = default)
       {
-         var habitant = Mapper.Map<Habitant>(command.Data);
+         var habitant = HabitantFactory.CreateFromCommand(command.HabitantId, command.Data);
 
          await habitantUpdateValidator.Validate(habitant).ConfigureAwait(false);
 
-         await habitantRepository.UpdateAsync(habitant).ConfigureAwait(false);
+         await habitantRepository.UpdateAsync(habitant.Id, habitant).ConfigureAwait(false);
 
          return Result.Ok();
       }

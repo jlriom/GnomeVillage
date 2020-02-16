@@ -5,8 +5,8 @@ namespace GnomeVillage.Application.Commands
 {
    public class UpdateHabitantCommand : Command<Habitant>
    {
-      public string HabitantId { get; }
-      public UpdateHabitantCommand(string habitantId, Habitant habitant) : base(habitant)
+      public int HabitantId { get; }
+      public UpdateHabitantCommand(int habitantId, Habitant habitant) : base(habitant)
       {
          HabitantId = habitantId;
       }

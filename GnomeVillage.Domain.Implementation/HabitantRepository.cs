@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using GnomeVillage.Data;
-using System.Threading.Tasks;
 
 namespace GnomeVillage.Domain.Implementation
 {

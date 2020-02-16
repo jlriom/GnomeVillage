@@ -56,7 +56,7 @@ namespace GnomeVillage.Api.Controllers
       [ProducesResponseType(StatusCodes.Status404NotFound)]
       [ProducesResponseType(StatusCodes.Status500InternalServerError)]
       [Route("{habitantId}")]
-      public async Task<ActionResult> UpdateHabitant(string habitantId, [FromBody] Habitant habitant, [FromServices] ICommandDispatcher commandDispatcher)
+      public async Task<ActionResult> UpdateHabitant(int habitantId, [FromBody] Habitant habitant, [FromServices] ICommandDispatcher commandDispatcher)
       {
          await commandDispatcher.Dispatch(new UpdateHabitantCommand(habitantId, habitant)).ConfigureAwait(false);
          return Ok();

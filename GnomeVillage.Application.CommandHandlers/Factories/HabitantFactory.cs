@@ -10,7 +10,12 @@ namespace GnomeVillage.Application.CommandHandlers
 
       public static Habitant CreateFromCommand(Commands.Dto.Habitant habitantCommand)
       {
-         var habitant = new Habitant()
+         return CreateFromCommand(HabitantId.NullHabitantId, habitantCommand);
+      }
+
+      public static Habitant CreateFromCommand(int id, Commands.Dto.Habitant habitantCommand)
+      {
+         var habitant = new Habitant( new HabitantId(id))
          {
             Name = HabitantName.FromString(habitantCommand.Name),
             Thumbnail = new System.Uri(habitantCommand.Thumbnail),
@@ -24,5 +29,6 @@ namespace GnomeVillage.Application.CommandHandlers
          };
          return habitant;
       }
+
    }
 }
