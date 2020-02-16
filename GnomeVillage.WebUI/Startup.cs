@@ -1,4 +1,3 @@
-using GnomeVillage.WebUI.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -22,7 +21,6 @@ namespace GnomeVillage.WebUI
       {
          services.AddRazorPages();
          services.AddServerSideBlazor().AddCircuitOptions(configure => configure.DetailedErrors = true);
-         services.AddSingleton<WeatherForecastService>();
       }
 
       // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

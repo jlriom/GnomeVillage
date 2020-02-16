@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using GnomeVillage.Application.Commands;
-using GnomeVillage.Application.Commands.Dto;
+using GnomeVillage.Application.Commands.Dtos;
 using GnomeVillage.Application.Queries;
-using GnomeVillage.Application.Queries.Dto;
+using GnomeVillage.Application.Queries.Dtos;
 using GnomeVillage.Cqrs.Contracts;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

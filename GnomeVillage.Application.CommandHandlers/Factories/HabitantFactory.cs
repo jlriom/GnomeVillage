@@ -8,12 +8,12 @@ namespace GnomeVillage.Application.CommandHandlers
    {
       protected HabitantFactory() { }
 
-      public static Habitant CreateFromCommand(Commands.Dto.Habitant habitantCommand)
+      public static Habitant CreateFromCommand(Commands.Dtos.Habitant habitantCommand)
       {
          return CreateFromCommand(HabitantId.NullHabitantId, habitantCommand);
       }
 
-      public static Habitant CreateFromCommand(int id, Commands.Dto.Habitant habitantCommand)
+      public static Habitant CreateFromCommand(int id, Commands.Dtos.Habitant habitantCommand)
       {
          var habitant = new Habitant( new HabitantId(id))
          {

@@ -15,4 +15,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\GnomeVillage.Application.Commands.Dtos\GnomeVillage.Application.Commands.Dtos.csproj" />
+    <ProjectReference Include="..\GnomeVillage.Application.Queries.Dtos\GnomeVillage.Application.Queries.Dtos.csproj" />
+  </ItemGroup>
+
 </Project>

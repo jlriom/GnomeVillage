@@ -1,4 +1,4 @@
-﻿using GnomeVillage.Application.Queries.Dto;
+﻿using GnomeVillage.Application.Queries.Dtos;
 using GnomeVillage.Cqrs.Implementation;
 
 namespace GnomeVillage.Application.Queries

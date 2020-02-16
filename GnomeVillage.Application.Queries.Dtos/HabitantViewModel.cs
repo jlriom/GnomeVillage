@@ -1,4 +1,4 @@
-﻿namespace GnomeVillage.Application.Queries.Dto
+﻿namespace GnomeVillage.Application.Queries.Dtos
 {
    public class HabitantViewModel
    {

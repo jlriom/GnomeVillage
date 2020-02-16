@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using GnomeVillage.Application.Queries;
-using GnomeVillage.Application.Queries.Dto;
+using GnomeVillage.Application.Queries.Dtos;
 using GnomeVillage.Cqrs.Contracts;
 using GnomeVillage.Cqrs.Implementation;
 using GnomeVillage.ReadModel.Contracts;
