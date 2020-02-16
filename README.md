@@ -5,7 +5,7 @@
 - Hexagonal Architecture
 - Command and Query Responsability Segregation (CQRS)
 - Applied Solid Principles: SRP, OCP, DIP
-- Applied Domain Driven Design pattern : Bounded Context, Layered layers, Rich entities, Value objects, Entity Factories, Services, Repositories
+- Applied Domain Driven Design patterns : Bounded Context, Layered layers, Rich entities, Value objects, Entity Factories, Services, Repositories
 
 ## Framework Platform
 
