@@ -74,31 +74,5 @@ namespace GnomeVillage.Api.Controllers
          await commandDispatcher.Dispatch(new DeleteHabitantCommand(habitantId)).ConfigureAwait(false);
          return Ok();
       }
-
-      [HttpPost]
-      [ProducesResponseType(StatusCodes.Status200OK)]
-      [ProducesResponseType(StatusCodes.Status400BadRequest)]
-      [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-      [ProducesResponseType(StatusCodes.Status404NotFound)]
-      [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-      [Route("{habitantId}/friend")]
-      public async Task<ActionResult> AddFriendToHabitant(int habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
-      {
-         await commandDispatcher.Dispatch(new AddFriendToHabitantCommand(habitantId, friendName)).ConfigureAwait(false);
-         return Ok();
-      }
-
-      [HttpDelete]
-      [ProducesResponseType(StatusCodes.Status200OK)]
-      [ProducesResponseType(StatusCodes.Status400BadRequest)]
-      [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-      [ProducesResponseType(StatusCodes.Status404NotFound)]
-      [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-      [Route("{habitantId}/friend")]
-      public async Task<ActionResult> DeleteFriendFromHabitant(int habitantId, [FromBody]string friendName, [FromServices] ICommandDispatcher commandDispatcher)
-      {
-         await commandDispatcher.Dispatch(new DeleteFriendFromHabitantCommand(habitantId, friendName)).ConfigureAwait(false);
-         return Ok();
-      }
    }
 }
