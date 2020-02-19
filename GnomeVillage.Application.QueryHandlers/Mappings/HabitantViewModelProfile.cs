@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using GnomeVillage.Application.Queries.Dto;
+using GnomeVillage.Application.Queries.Dtos;
 using GnomeVillage.ReadModel.Contracts.Models;
 
 namespace GnomeVillage.Application.QueryHandlers.Mappings

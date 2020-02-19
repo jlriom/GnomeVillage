@@ -13,6 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\GnomeVillage.Application.Commands.Dtos\GnomeVillage.Application.Commands.Dtos.csproj" />
     <ProjectReference Include="..\GnomeVillage.Cqrs.Contracts\GnomeVillage.Cqrs.Contracts.csproj" />
     <ProjectReference Include="..\GnomeVillage.Cqrs.Implementation\GnomeVillage.Cqrs.Implementation.csproj" />
   </ItemGroup>

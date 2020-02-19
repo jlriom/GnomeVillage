@@ -1,0 +1,62 @@
+﻿@page "/habitantoverview"
+@inherits HabitantOverviewBase
+
+<h1 class="page-title">All Habitants</h1>
+
+@if (Habitants == null)
+{
+    <p><em>Loading ...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>hab Id</th>
+                <td>Name</td>
+                <td>Age</td>
+                <td>Height</td>
+                <td>Weight</td>
+                <td>Hair Color</td>
+                <td>Professions</td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var habitant in Habitants)
+            {
+                <tr>
+                    <td>
+                        <img src="@habitant.Thumbnail" />
+                    </td>
+                    <td>
+                        @habitant.Id
+                    </td>
+                    <td>
+                        @habitant.Name
+                    </td>
+                    <td>
+                        @habitant.Age
+                    </td>
+                    <td>
+                        @habitant.Height
+                    </td>
+                    <td>
+                        @habitant.Weight
+                    </td>
+                    <td>
+                        @habitant.HairColor
+                    </td>
+                    <td>
+                        @string.Join(", ", @habitant.Professions.ToArray())
+                    </td>
+                    <td>
+                        <a href="@($"habitantdetail/{habitant.Id}")" class="btn btn-primary">Details</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

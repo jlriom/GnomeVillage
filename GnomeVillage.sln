@@ -54,6 +54,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Application.Commands.Dtos", "GnomeVillage.Application.Commands.Dtos\GnomeVillage.Application.Commands.Dtos.csproj", "{A42D3A60-9405-44AA-92EA-C5F59C304C63}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GnomeVillage.Application.Queries.Dtos", "GnomeVillage.Application.Queries.Dtos\GnomeVillage.Application.Queries.Dtos.csproj", "{F31CDBFB-EB36-4377-A3C6-5909476FFB4B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -130,6 +134,14 @@ Global
 		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A42D3A60-9405-44AA-92EA-C5F59C304C63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A42D3A60-9405-44AA-92EA-C5F59C304C63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A42D3A60-9405-44AA-92EA-C5F59C304C63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A42D3A60-9405-44AA-92EA-C5F59C304C63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F31CDBFB-EB36-4377-A3C6-5909476FFB4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F31CDBFB-EB36-4377-A3C6-5909476FFB4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F31CDBFB-EB36-4377-A3C6-5909476FFB4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F31CDBFB-EB36-4377-A3C6-5909476FFB4B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +168,8 @@ Global
 		{C40415BF-2B9C-41C0-9B3E-09FCBB4F1897} = {12EF3F02-395B-4E71-97BA-BE3F2795A050}
 		{10118347-4336-46E6-8799-7FD3C0DD166E} = {12EF3F02-395B-4E71-97BA-BE3F2795A050}
 		{766A4E4C-F5C7-4F4F-82EF-7A96ECC424B8} = {10118347-4336-46E6-8799-7FD3C0DD166E}
+		{A42D3A60-9405-44AA-92EA-C5F59C304C63} = {C07DCE21-EED9-43A0-A7DA-7018CF5156F5}
+		{F31CDBFB-EB36-4377-A3C6-5909476FFB4B} = {EA26F975-8FD8-4E8D-9569-9FE4E8949E8C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FBE4D75-BFD1-4EE9-8842-793EFC8A00E4}

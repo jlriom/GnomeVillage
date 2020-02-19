@@ -1,0 +1,58 @@
+﻿@page "/habitantdetail/{habitantId}"
+@inherits HabitantDetailBase
+
+<h1>Details for @HabitantViewModel.Name</h1>
+
+
+<div class="col-12 row">
+    <div class="col-2">
+        <img src="@(HabitantViewModel.Thumbnail)" class="img-responsive" />
+    </div>
+    <div class="col-10 row">
+        <div class="col-xs-12 col-sm-8">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Habitant ID</label>
+                <div class="col-sm-8">
+                    <label type="text" class="form-control-plaintext">@HabitantViewModel.Id</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Name</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@HabitantViewModel.Name</label>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Age</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@HabitantViewModel.Age</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Height</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@HabitantViewModel.Height</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Height</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@HabitantViewModel.Weight</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">HairColor</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@HabitantViewModel.HairColor</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Professions</label>
+                <div class="col-sm-8">
+                    <label type="text" readonly class="form-control-plaintext">@string.Join(", ", @HabitantViewModel.Professions.ToArray())</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

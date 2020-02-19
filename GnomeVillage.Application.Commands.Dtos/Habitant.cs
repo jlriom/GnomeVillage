@@ -1,4 +1,4 @@
-﻿namespace GnomeVillage.Application.Commands.Dto
+﻿namespace GnomeVillage.Application.Commands.Dtos
 {
    public class Habitant
    {
