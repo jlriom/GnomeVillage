@@ -3,7 +3,7 @@
 
 <h1 class="page-title">All Habitants</h1>
 
-@if (Habitans == null)
+@if (Habitants == null)
 {
     <p><em>Loading ...</em></p>
 }
@@ -20,10 +20,11 @@ else
                 <td>Weight</td>
                 <td>Hair Color</td>
                 <td>Professions</td>
+                <td></td>
             </tr>
         </thead>
         <tbody>
-            @foreach (var habitant in Habitans)
+            @foreach (var habitant in Habitants)
             {
                 <tr>
                     <td>
@@ -49,6 +50,9 @@ else
                     </td>
                     <td>
                         @string.Join(", ", @habitant.Professions.ToArray())
+                    </td>
+                    <td>
+                        <a href="@($"habitantdetail/{habitant.Id}")" class="btn btn-primary">Details</a>
                     </td>
                 </tr>
             }

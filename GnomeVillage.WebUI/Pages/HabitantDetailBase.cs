@@ -6,9 +6,14 @@ using System.Threading.Tasks;
 
 namespace GnomeVillage.WebUI.Pages
 {
-   public partial class HabitantOverviewBase: ComponentBase
+   public class HabitantDetailBase: ComponentBase
    {
-      public IEnumerable<HabitantViewModel> Habitans { get; set; }
+      [Parameter]
+      public string HabitantId { get; set; }
+
+      public HabitantViewModel HabitantViewModel { get; set; } = new HabitantViewModel();
+
+      public IEnumerable<HabitantViewModel> Habitants { get; set; }
       public IEnumerable<string> Professions { get; set; }
       public IEnumerable<string> HairColors { get; set; }
 
@@ -18,13 +23,15 @@ namespace GnomeVillage.WebUI.Pages
             InitProfessionList(),
             InitHairColorList(),
             InitHabitantList());
-         
+
+         HabitantViewModel = Habitants.FirstOrDefault(h => h.Id == int.Parse(HabitantId));
+
          await base.OnInitializedAsync();
       }
 
       private async Task InitHabitantList()
       {
-         Habitans = new List<HabitantViewModel>
+         Habitants = new List<HabitantViewModel>
          {
             new HabitantViewModel
             {
