@@ -1,3 +1,4 @@
+using GnomeVillage.WebUI.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -21,6 +22,20 @@ namespace GnomeVillage.WebUI
       {
          services.AddRazorPages();
          services.AddServerSideBlazor().AddCircuitOptions(configure => configure.DetailedErrors = true);
+
+         services.AddHttpClient<IHabitantDataService, HabitantDataService>(
+            client =>
+            {
+               var habitantApiUrl = Configuration.GetSection("HabitantsApi:Url").Value;
+               client.BaseAddress = new System.Uri(habitantApiUrl);
+            });
+
+         services.AddHttpClient<ILookupDataService, LookupDataService>(
+            client =>
+            {
+               var habitantApiUrl = Configuration.GetSection("HabitantsApi:Url").Value;
+               client.BaseAddress = new System.Uri(habitantApiUrl);
+            });
       }
 
       // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

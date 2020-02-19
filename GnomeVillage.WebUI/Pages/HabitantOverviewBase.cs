@@ -1,4 +1,5 @@
 ﻿using GnomeVillage.Application.Queries.Dtos;
+using GnomeVillage.WebUI.Services;
 using Microsoft.AspNetCore.Components;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,11 @@ namespace GnomeVillage.WebUI.Pages
 {
    public partial class HabitantOverviewBase: ComponentBase
    {
+
+
+      [Inject]
+      public IHabitantDataService HabitantDataService { get; set; }
+
       public IEnumerable<HabitantViewModel> Habitants { get; set; }
       public IEnumerable<string> Professions { get; set; }
       public IEnumerable<string> HairColors { get; set; }
@@ -18,12 +24,15 @@ namespace GnomeVillage.WebUI.Pages
             InitProfessionList(),
             InitHairColorList(),
             InitHabitantList());
-         
+
          await base.OnInitializedAsync();
       }
 
       private async Task InitHabitantList()
       {
+         Habitants = await HabitantDataService.GetHabitants();
+         return;
+
          Habitants = new List<HabitantViewModel>
          {
             new HabitantViewModel
